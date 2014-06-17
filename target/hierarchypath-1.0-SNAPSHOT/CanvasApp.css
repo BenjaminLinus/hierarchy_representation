@@ -1,0 +1,58 @@
+body.custom-body {
+    background: #f5f5f5;
+}
+
+h1 {
+  font-size: 2em;
+  font-weight: bold;
+  color: #777777;
+  margin: 40px 0px 16px;
+  text-align: center;
+}
+
+div#canvas-container {
+    text-align: center;
+}
+
+div.description-container {
+    text-align: center;
+    width: 100%;
+}
+
+div.description-div {
+    width: 60%;
+    display: inline-block;
+    text-align: left;
+}
+
+div.list-container {
+    text-align: center;
+    width: 100%;
+}
+
+div.nodes-list {
+    width: 60%;
+    text-align: left;
+    display: inline-block;
+    font-size: 14px;
+}
+
+span#nodes-list {
+    font-weight: bold;
+}
+
+div.bottom-sign {
+    text-align: center;
+    width: 100%;
+    margin-top: 40px;
+}
+
+a.custom-link, a.custom-link:visited {
+    color: #005a8c;
+    text-decoration: none;
+}
+
+a.custom-link:hover {
+    color: #005a8c;
+    text-decoration: underline;
+}
