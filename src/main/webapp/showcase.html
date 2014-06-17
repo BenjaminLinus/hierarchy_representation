@@ -26,18 +26,39 @@
     <!--                                           -->
     <script type="text/javascript" language="javascript" src="App/App.nocache.js"></script>
 </head>
-<body>
+<body class="custom-body">
 
 <noscript>
-    <div style="width: 22em; position: absolute; left: 50%; margin-left: -11em; color: red; background-color: white; border: 1px solid red; padding: 4px; font-family: sans-serif">
+    <div>
         Your web browser must have JavaScript enabled
         in order for this application to display correctly.
     </div>
 </noscript>
 
-<h1>Path in dependencies hierarchy</h1>
+<h1>The hierarchy representation</h1>
+
+<div class="description-container">
+    <div class="description-div">
+        <p>
+            This GWT application represents hierarchy of dependencies.
+            The list of nodes is presented at the bottom of the page, according to the following rule:
+            all higher-level nodes must be printed before any lower-level node. These nodes generated randomly.
+            <a target="_blank" href="http://www.alfrescodev.com/hierarchy_representation" class="custom-link">Read more...</a>
+        </p>
+    </div>
+</div>
 
 <div id="canvas-container"></div>
+
+<div class="list-container">
+    <div class="nodes-list">
+        The nodes list: <span id="nodes-list"></span>
+    </div>
+</div>
+
+<div class="bottom-sign">
+    Created by <a target="_blank" href="http://www.alfrescodev.com" class="custom-link">www.alfrescodev.com</a>
+</div>
 
 </body>
 </html>
