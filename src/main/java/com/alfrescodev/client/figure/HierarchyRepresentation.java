@@ -6,6 +6,8 @@ import com.alfrescodev.client.data.Node;
 import com.google.gwt.canvas.client.Canvas;
 import com.google.gwt.canvas.dom.client.Context2d;
 import com.google.gwt.canvas.dom.client.CssColor;
+import com.google.gwt.dom.client.Touch;
+import com.google.gwt.event.dom.client.*;
 import com.google.gwt.user.client.Window;
 
 import java.util.Collection;
@@ -44,9 +46,14 @@ public class HierarchyRepresentation {
     private IndexHolder indexHolder = IndexHolder.getInstance(0);
     private int indexCounter = 0;
 
+    // mouse positions relative to canvas
+    private int mouseX, mouseY;
+
     private Integer currentIndex;
 
     private Hierarchy hierarchy;
+
+    private Canvas canvas;
 
     private static class LevelHolder {
 
@@ -66,16 +73,17 @@ public class HierarchyRepresentation {
 
     }
 
-    private HierarchyRepresentation(Hierarchy hierarchy) {
+    private HierarchyRepresentation(Hierarchy hierarchy, Canvas canvas) {
         this.hierarchy = hierarchy;
+        this.canvas = canvas;
     }
 
     public static void drawHierarchy(Canvas canvas, Hierarchy hierarchy) {
-        HierarchyRepresentation hierarchyRepresentation = new HierarchyRepresentation(hierarchy);
+        HierarchyRepresentation hierarchyRepresentation = new HierarchyRepresentation(hierarchy, canvas);
         //Window.alert("hierarchy.getNodes().values() = "+hierarchy.getNodes().values());
         hierarchyRepresentation.splitHierarchyByLevels(hierarchy.getNodes().keySet(), 0);
         hierarchyRepresentation.splitNodesByIndex();
-        hierarchyRepresentation.drawNodesMap(canvas);
+        hierarchyRepresentation.drawNodesMap();
     }
 
     private void splitNodesByIndex() {
@@ -147,7 +155,7 @@ public class HierarchyRepresentation {
         }
     }
 
-    private void drawNodesMap(Canvas canvas) {
+    private void drawNodesMap() {
         int maxLeveSize = 0;
         int offsetSize = 0;
         int height = 0;
@@ -227,12 +235,8 @@ public class HierarchyRepresentation {
             currentIndex = indexHolder.getValue();
         }
         else if (currentIndex != node.getIndexHolder().getValue() && deep != 0) {
-            //Window.alert("IndexHolder "+node.getIndexHolder().getValue()+"! reSetValue = "+currentIndex);
-            //Window.alert("IndexHolder instances = "+IndexHolder.getInstances());
             node.getIndexHolder().reSetValue(currentIndex);
-            //Window.alert("IndexHolder instances = "+IndexHolder.getInstances());
             indexHolder = node.getIndexHolder();
-            //currentIndex = indexHolder.getValue();
         }
         return level;
     }
@@ -242,7 +246,6 @@ public class HierarchyRepresentation {
         currentIndex = null;
         for (Integer nodeId:nodeIds) {
             Node node = hierarchy.getNodes().get(nodeId);
-            //Window.alert("findLevel! deep = "+deep+" node = "+node);
             if (deep == 0) {
                 currentIndex = null;
             }
@@ -267,6 +270,48 @@ public class HierarchyRepresentation {
             //Window.alert("new indexHolder " + newVal);
             indexHolder = IndexHolder.getInstance(newVal);
         }
+    }
+
+    void initHandlers() {
+        canvas.addMouseMoveHandler(new MouseMoveHandler() {
+            public void onMouseMove(MouseMoveEvent event) {
+                mouseX = event.getRelativeX(canvas.getElement());
+                mouseY = event.getRelativeY(canvas.getElement());
+            }
+        });
+
+        canvas.addMouseOutHandler(new MouseOutHandler() {
+            public void onMouseOut(MouseOutEvent event) {
+                mouseX = -200;
+                mouseY = -200;
+            }
+        });
+
+        canvas.addTouchMoveHandler(new TouchMoveHandler() {
+            public void onTouchMove(TouchMoveEvent event) {
+                event.preventDefault();
+                if (event.getTouches().length() > 0) {
+                    Touch touch = event.getTouches().get(0);
+                    mouseX = touch.getRelativeX(canvas.getElement());
+                    mouseY = touch.getRelativeY(canvas.getElement());
+                }
+                event.preventDefault();
+            }
+        });
+
+        canvas.addTouchEndHandler(new TouchEndHandler() {
+            public void onTouchEnd(TouchEndEvent event) {
+                event.preventDefault();
+                mouseX = -200;
+                mouseY = -200;
+            }
+        });
+
+        canvas.addGestureStartHandler(new GestureStartHandler() {
+            public void onGestureStart(GestureStartEvent event) {
+                event.preventDefault();
+            }
+        });
     }
 
 }

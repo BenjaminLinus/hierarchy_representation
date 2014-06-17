@@ -39,19 +39,24 @@ public class Hierarchy implements Cloneable {
         return hierarchy;
     }
 
-    private static void newNode(Hierarchy hierarchy, int id) {
+    public static void newNode(Hierarchy hierarchy, int id) {
         Node node = new Node(id, null);
         hierarchy.nodes.put(node.getId(), node);
     }
 
-    private static void newNode(Hierarchy hierarchy, int id, Integer... parentIds) {
+    public static void newNode(Hierarchy hierarchy, int id, Integer... parentIds) {
         Node node = new Node(id, Arrays.asList(parentIds));
         hierarchy.nodes.put(node.getId(), node);
     }
 
-    public static Hierarchy newTestHierarchy2() {
+    public static Hierarchy clearHierarchy() {
         Hierarchy hierarchy = new Hierarchy();
         hierarchy.nodes = new HashMap<Integer, Node>();
+        return hierarchy;
+    }
+
+    public static Hierarchy newTestHierarchy2() {
+        Hierarchy hierarchy = clearHierarchy();
         newNode(hierarchy, 0);
         newNode(hierarchy, 1);
         newNode(hierarchy, 2, 0);
@@ -71,8 +76,7 @@ public class Hierarchy implements Cloneable {
     }
 
     public static Hierarchy newTestHierarchy() {
-        Hierarchy hierarchy = new Hierarchy();
-        hierarchy.nodes = new HashMap<Integer, Node>();
+        Hierarchy hierarchy = clearHierarchy();
 
         newNode(hierarchy, 0);
         newNode(hierarchy, 1, 0);
