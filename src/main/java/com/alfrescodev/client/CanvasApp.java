@@ -53,7 +53,7 @@ public class CanvasApp implements EntryPoint {
         canvas.setCoordinateSpaceHeight(height);
         RootPanel.get(holderId).add(canvas);
         context = canvas.getContext2d();
-        Hierarchy hierarchy = Hierarchy.newTestHierarchy2();
+        Hierarchy hierarchy = Hierarchy.newTestHierarchy3();
         //Hierarchy hierarchy = Hierarchy.generateRandomHierarchy(30);
         Hierarchy originHierarchy = hierarchy.clone();
         HierarchyRepresentation.drawHierarchy(canvas, hierarchy);

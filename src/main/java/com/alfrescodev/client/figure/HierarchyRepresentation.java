@@ -55,6 +55,19 @@ public class HierarchyRepresentation {
 
     private Canvas canvas;
 
+    public Integer getIndexOf(int id) {
+        Integer index = null;
+        for (Map<Integer, Collection<Node>> levelMap : nodesByIndexMap.values()) {
+            for (Collection<Node> nodes : levelMap.values()) {
+                for (Node node:nodes) {
+                    if (node.getId() == id)
+                        index = node.getIndexHolder().getValue();
+                }
+            }
+        }
+        return index;
+    }
+
     private static class LevelHolder {
 
         private int level;
@@ -74,8 +87,12 @@ public class HierarchyRepresentation {
     }
 
     private HierarchyRepresentation(Hierarchy hierarchy, Canvas canvas) {
-        this.hierarchy = hierarchy;
+        this(hierarchy);
         this.canvas = canvas;
+    }
+
+    private HierarchyRepresentation(Hierarchy hierarchy) {
+        this.hierarchy = hierarchy;
     }
 
     public static void drawHierarchy(Canvas canvas, Hierarchy hierarchy) {
@@ -86,7 +103,11 @@ public class HierarchyRepresentation {
         hierarchyRepresentation.drawNodesMap();
     }
 
-    private void splitNodesByIndex() {
+    public static HierarchyRepresentation getInstance(Hierarchy hierarchy) {
+        return new HierarchyRepresentation(hierarchy);
+    }
+
+    public void splitNodesByIndex() {
         for (int level:nodesMap.keySet()) {
             Collection<Node> nodes = nodesMap.get(level);
             for (Node node:nodes) {
@@ -259,7 +280,7 @@ public class HierarchyRepresentation {
         return level;
     }
 
-    private void splitHierarchyByLevels(Collection<Integer> nodes, int deep) {
+    public void splitHierarchyByLevels(Collection<Integer> nodes, int deep) {
         if (nodes!=null && nodes.size() > 0) {
             int level = findLevel(nodes, deep);
             levelHolder.setLevel(level + 1);

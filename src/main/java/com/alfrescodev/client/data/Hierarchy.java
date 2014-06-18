@@ -55,6 +55,36 @@ public class Hierarchy implements Cloneable {
         return hierarchy;
     }
 
+    public static Hierarchy newTestHierarchy3() {
+        Hierarchy hierarchy = Hierarchy.clearHierarchy();
+
+        Hierarchy.newNode(hierarchy, 0);
+        Hierarchy.newNode(hierarchy, 1, 0);
+        Hierarchy.newNode(hierarchy, 2, 0, 1);
+        Hierarchy.newNode(hierarchy, 3);
+        Hierarchy.newNode(hierarchy, 4, 0, 3);
+        Hierarchy.newNode(hierarchy, 5, 0);
+        Hierarchy.newNode(hierarchy, 6, 3);
+
+        Hierarchy.newNode(hierarchy, 11);
+        Hierarchy.newNode(hierarchy, 12, 3, 0);
+        Hierarchy.newNode(hierarchy, 13, 11);
+        Hierarchy.newNode(hierarchy, 17);
+        Hierarchy.newNode(hierarchy, 13, 11, 17);
+
+        Hierarchy.newNode(hierarchy, 7);
+        Hierarchy.newNode(hierarchy, 8, 7);
+        Hierarchy.newNode(hierarchy, 14, 7);
+        Hierarchy.newNode(hierarchy, 15, 14, 7);
+        Hierarchy.newNode(hierarchy, 16, 14);
+        Hierarchy.newNode(hierarchy, 22, 15);
+        Hierarchy.newNode(hierarchy, 23, 22);
+        Hierarchy.newNode(hierarchy, 24, 23);
+        Hierarchy.newNode(hierarchy, 25, 24);
+
+        return hierarchy;
+    }
+
     public static Hierarchy newTestHierarchy2() {
         Hierarchy hierarchy = clearHierarchy();
         newNode(hierarchy, 0);

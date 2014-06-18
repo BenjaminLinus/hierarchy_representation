@@ -18,12 +18,12 @@
     <file path="/Hierarchy.java" changelist="aebf8e28-d7cc-4d5b-9092-d6d507ef5dbd" time="1403026237908" ignored="false" />
     <file path="/Node.java" changelist="aebf8e28-d7cc-4d5b-9092-d6d507ef5dbd" time="1402939058549" ignored="false" />
     <file path="/fragment.java" changelist="aebf8e28-d7cc-4d5b-9092-d6d507ef5dbd" time="1402750403496" ignored="false" />
-    <file path="/GwtTestApp.java" changelist="aebf8e28-d7cc-4d5b-9092-d6d507ef5dbd" time="1403026923258" ignored="false" />
-    <file path="/HierarchyRepresentation.java" changelist="aebf8e28-d7cc-4d5b-9092-d6d507ef5dbd" time="1403021930949" ignored="false" />
+    <file path="/GwtTestApp.java" changelist="aebf8e28-d7cc-4d5b-9092-d6d507ef5dbd" time="1403091235440" ignored="false" />
+    <file path="/HierarchyRepresentation.java" changelist="aebf8e28-d7cc-4d5b-9092-d6d507ef5dbd" time="1403091199464" ignored="false" />
     <file path="/CanvasApp.css" changelist="aebf8e28-d7cc-4d5b-9092-d6d507ef5dbd" time="1402921289016" ignored="false" />
     <file path="/IndexHolder.java" changelist="aebf8e28-d7cc-4d5b-9092-d6d507ef5dbd" time="1402936661898" ignored="false" />
     <file path="/HierarchyPathFinder.java" changelist="aebf8e28-d7cc-4d5b-9092-d6d507ef5dbd" time="1402988479902" ignored="false" />
-    <file path="/README.md" changelist="aebf8e28-d7cc-4d5b-9092-d6d507ef5dbd" time="1403013479728" ignored="false" />
+    <file path="/README.md" changelist="aebf8e28-d7cc-4d5b-9092-d6d507ef5dbd" time="1403091367478" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -93,10 +93,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CanvasApp.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="CanvasApp.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/alfrescodev/client/CanvasApp.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="75" column="40" selection-start="2667" selection-end="2667" vertical-scroll-proportion="0.6975089">
+            <state line="58" column="40" selection-start="2136" selection-end="2136" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -105,12 +105,12 @@
       <file leaf-file-name="HierarchyRepresentation.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/alfrescodev/client/figure/HierarchyRepresentation.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="42" column="41" selection-start="1755" selection-end="1755" vertical-scroll-proportion="0.0">
+            <state line="63" column="64" selection-start="2451" selection-end="2451" vertical-scroll-proportion="0.0">
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#1581#1608#0" expanded="true" />
                 <element signature="e#1710#1751#0" expanded="true" />
-                <element signature="e#6179#6196#0" expanded="true" />
+                <element signature="e#6845#6862#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -119,20 +119,29 @@
       <file leaf-file-name="Hierarchy.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/alfrescodev/client/data/Hierarchy.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="64" column="58" selection-start="2056" selection-end="2056" vertical-scroll-proportion="0.0">
+            <state line="85" column="6" selection-start="1759" selection-end="2843" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="GwtTestApp.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="GwtTestApp.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/test/java/com/alfrescodev/client/GwtTestApp.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="138" column="47" selection-start="5059" selection-end="5059" vertical-scroll-proportion="0.0">
+            <state line="208" column="44" selection-start="7889" selection-end="7889" vertical-scroll-proportion="0.8158845">
               <folding>
-                <element signature="e#3298#3307#0" expanded="true" />
-                <element signature="e#5103#5112#0" expanded="true" />
+                <element signature="e#4388#4397#0" expanded="true" />
+                <element signature="e#6193#6202#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="README.md" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/README.md">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="6" column="12" selection-start="246" selection-end="246" vertical-scroll-proportion="0.0">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -169,12 +178,12 @@
         <option value="$PROJECT_DIR$/src/main/java/com/alfrescodev/client/data/Node.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/alfrescodev/client/figure/Circle.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/alfrescodev/client/data/HierarchyPathFinder.java" />
-        <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/src/main/webapp/CanvasApp.html" />
         <option value="$PROJECT_DIR$/src/main/webapp/showcase.html" />
-        <option value="$PROJECT_DIR$/src/main/java/com/alfrescodev/client/figure/HierarchyRepresentation.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/alfrescodev/client/data/Hierarchy.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/alfrescodev/client/CanvasApp.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/alfrescodev/client/data/Hierarchy.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/alfrescodev/client/figure/HierarchyRepresentation.java" />
+        <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/src/test/java/com/alfrescodev/client/GwtTestApp.java" />
       </list>
     </option>
@@ -645,7 +654,7 @@
     <property name="options.searchVisible" value="true" />
     <property name="options.splitter.details.proportions" value="0.2" />
   </component>
-  <component name="RunManager" selected="Maven.gwt:test">
+  <component name="RunManager" selected="Maven.package">
     <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
       <module name="" />
       <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m" />
@@ -971,7 +980,7 @@
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32897863" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.347981" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.29334918" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2682334" sideWeight="0.14489311" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
@@ -1060,13 +1069,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="14" selection-start="205" selection-end="205" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/CanvasApp.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="26" column="80" selection-start="1224" selection-end="1242" vertical-scroll-proportion="-9.153846">
@@ -1141,39 +1143,46 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/alfrescodev/client/data/Hierarchy.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="64" column="58" selection-start="2056" selection-end="2056" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/alfrescodev/client/GwtTestApp.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="138" column="47" selection-start="5059" selection-end="5059" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="e#3298#3307#0" expanded="true" />
-            <element signature="e#5103#5112#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/alfrescodev/client/figure/HierarchyRepresentation.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="42" column="41" selection-start="1755" selection-end="1755" vertical-scroll-proportion="0.0">
+        <state line="63" column="64" selection-start="2451" selection-end="2451" vertical-scroll-proportion="0.0">
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#1581#1608#0" expanded="true" />
             <element signature="e#1710#1751#0" expanded="true" />
-            <element signature="e#6179#6196#0" expanded="true" />
+            <element signature="e#6845#6862#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/alfrescodev/client/CanvasApp.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="75" column="40" selection-start="2667" selection-end="2667" vertical-scroll-proportion="0.6975089">
+        <state line="58" column="40" selection-start="2136" selection-end="2136" vertical-scroll-proportion="0.0">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/alfrescodev/client/data/Hierarchy.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="85" column="6" selection-start="1759" selection-end="2843" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="6" column="12" selection-start="246" selection-end="246" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/alfrescodev/client/GwtTestApp.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="208" column="44" selection-start="7889" selection-end="7889" vertical-scroll-proportion="0.8158845">
+          <folding>
+            <element signature="e#4388#4397#0" expanded="true" />
+            <element signature="e#6193#6202#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
