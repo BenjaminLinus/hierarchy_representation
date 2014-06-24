@@ -8,22 +8,30 @@
     <file path="/Dummy.txt" changelist="aebf8e28-d7cc-4d5b-9092-d6d507ef5dbd" time="1403025667288" ignored="false" />
     <file path="$PROJECT_DIR$/target/generated-sources/gwt/com/alfrescodev/client/Messages.java" changelist="aebf8e28-d7cc-4d5b-9092-d6d507ef5dbd" time="1402564386801" ignored="false" />
     <file path="/showcase.html" changelist="aebf8e28-d7cc-4d5b-9092-d6d507ef5dbd" time="1402595388385" ignored="false" />
-    <file path="/CanvasApp.html" changelist="aebf8e28-d7cc-4d5b-9092-d6d507ef5dbd" time="1403013419999" ignored="false" />
+    <file path="/CanvasApp.html" changelist="aebf8e28-d7cc-4d5b-9092-d6d507ef5dbd" time="1403599900040" ignored="false" />
     <file path="/App.gwt.xml" changelist="aebf8e28-d7cc-4d5b-9092-d6d507ef5dbd" time="1402585573128" ignored="false" />
     <file path="/web.xml" changelist="aebf8e28-d7cc-4d5b-9092-d6d507ef5dbd" time="1402585737361" ignored="false" />
     <file path="/pom.xml" changelist="aebf8e28-d7cc-4d5b-9092-d6d507ef5dbd" time="1402677433541" ignored="false" />
     <file path="/a.dummy" changelist="aebf8e28-d7cc-4d5b-9092-d6d507ef5dbd" time="1403026188047" ignored="false" />
-    <file path="/CanvasApp.java" changelist="aebf8e28-d7cc-4d5b-9092-d6d507ef5dbd" time="1403010486300" ignored="false" />
-    <file path="/Circle.java" changelist="aebf8e28-d7cc-4d5b-9092-d6d507ef5dbd" time="1402939874244" ignored="false" />
-    <file path="/Hierarchy.java" changelist="aebf8e28-d7cc-4d5b-9092-d6d507ef5dbd" time="1403026237908" ignored="false" />
-    <file path="/Node.java" changelist="aebf8e28-d7cc-4d5b-9092-d6d507ef5dbd" time="1402939058549" ignored="false" />
+    <file path="/CanvasApp.java" changelist="aebf8e28-d7cc-4d5b-9092-d6d507ef5dbd" time="1403612558379" ignored="false" />
+    <file path="/Circle.java" changelist="aebf8e28-d7cc-4d5b-9092-d6d507ef5dbd" time="1403097735607" ignored="false" />
+    <file path="/Hierarchy.java" changelist="aebf8e28-d7cc-4d5b-9092-d6d507ef5dbd" time="1403608922222" ignored="false" />
+    <file path="/Node.java" changelist="aebf8e28-d7cc-4d5b-9092-d6d507ef5dbd" time="1403609602608" ignored="false" />
     <file path="/fragment.java" changelist="aebf8e28-d7cc-4d5b-9092-d6d507ef5dbd" time="1402750403496" ignored="false" />
     <file path="/GwtTestApp.java" changelist="aebf8e28-d7cc-4d5b-9092-d6d507ef5dbd" time="1403091235440" ignored="false" />
-    <file path="/HierarchyRepresentation.java" changelist="aebf8e28-d7cc-4d5b-9092-d6d507ef5dbd" time="1403091199464" ignored="false" />
-    <file path="/CanvasApp.css" changelist="aebf8e28-d7cc-4d5b-9092-d6d507ef5dbd" time="1402921289016" ignored="false" />
-    <file path="/IndexHolder.java" changelist="aebf8e28-d7cc-4d5b-9092-d6d507ef5dbd" time="1402936661898" ignored="false" />
-    <file path="/HierarchyPathFinder.java" changelist="aebf8e28-d7cc-4d5b-9092-d6d507ef5dbd" time="1402988479902" ignored="false" />
+    <file path="/HierarchyRepresentation.java" changelist="aebf8e28-d7cc-4d5b-9092-d6d507ef5dbd" time="1403611309413" ignored="false" />
+    <file path="/CanvasApp.css" changelist="aebf8e28-d7cc-4d5b-9092-d6d507ef5dbd" time="1403523011371" ignored="false" />
+    <file path="/IndexHolder.java" changelist="aebf8e28-d7cc-4d5b-9092-d6d507ef5dbd" time="1403609336250" ignored="false" />
+    <file path="/HierarchyPathFinder.java" changelist="aebf8e28-d7cc-4d5b-9092-d6d507ef5dbd" time="1403609135500" ignored="false" />
     <file path="/README.md" changelist="aebf8e28-d7cc-4d5b-9092-d6d507ef5dbd" time="1403091367478" ignored="false" />
+    <file path="/CircleWidget.java" changelist="aebf8e28-d7cc-4d5b-9092-d6d507ef5dbd" time="1403611556304" ignored="false" />
+    <file path="/NodeHighlightContextMenu.java" changelist="aebf8e28-d7cc-4d5b-9092-d6d507ef5dbd" time="1403612460011" ignored="false" />
+    <file path="/AddLinksMenu.java" changelist="aebf8e28-d7cc-4d5b-9092-d6d507ef5dbd" time="1403611499534" ignored="false" />
+    <file path="/LinksManageMenu.java" changelist="aebf8e28-d7cc-4d5b-9092-d6d507ef5dbd" time="1403611830013" ignored="false" />
+    <file path="/OkCancelAction.java" changelist="aebf8e28-d7cc-4d5b-9092-d6d507ef5dbd" time="1403608477864" ignored="false" />
+    <file path="/RedrawHandler.java" changelist="aebf8e28-d7cc-4d5b-9092-d6d507ef5dbd" time="1403608504763" ignored="false" />
+    <file path="/DeleteLinksMenu.java" changelist="aebf8e28-d7cc-4d5b-9092-d6d507ef5dbd" time="1403534519020" ignored="false" />
+    <file path="/CircleWidgetMouseHandler.java" changelist="aebf8e28-d7cc-4d5b-9092-d6d507ef5dbd" time="1403545339995" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -84,10 +92,52 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="pom.xml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pom.xml">
+      <file leaf-file-name="HierarchyRepresentation.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/alfrescodev/client/figure/HierarchyRepresentation.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="39" column="17" selection-start="1358" selection-end="1362" vertical-scroll-proportion="-25.08">
+            <state line="517" column="7" selection-start="17590" selection-end="17590" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="e#6047#6166#0" expanded="true" />
+                <element signature="e#6155#6156#0" expanded="true" />
+                <element signature="e#13380#13403#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="NodeHighlightContextMenu.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/alfrescodev/client/widget/NodeHighlightContextMenu.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="372" column="50" selection-start="14149" selection-end="14149" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="e#6682#6813#0" expanded="true" />
+                <element signature="e#6802#6803#0" expanded="true" />
+                <element signature="e#6874#7006#0" expanded="true" />
+                <element signature="e#6995#6996#0" expanded="true" />
+                <element signature="e#7059#7187#0" expanded="true" />
+                <element signature="e#7176#7177#0" expanded="true" />
+                <element signature="e#13161#13167#0" expanded="true" />
+                <element signature="e#13619#13625#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="HierarchyPathFinder.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/alfrescodev/client/data/HierarchyPathFinder.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="16" column="4" selection-start="379" selection-end="441" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="e#939#948#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="IndexHolder.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/alfrescodev/client/data/IndexHolder.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="41" column="41" selection-start="1050" selection-end="1050" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -96,65 +146,73 @@
       <file leaf-file-name="CanvasApp.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/alfrescodev/client/CanvasApp.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="58" column="40" selection-start="2136" selection-end="2136" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="HierarchyRepresentation.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/alfrescodev/client/figure/HierarchyRepresentation.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="63" column="64" selection-start="2451" selection-end="2451" vertical-scroll-proportion="0.0">
+            <state line="40" column="35" selection-start="1615" selection-end="1615" vertical-scroll-proportion="0.0">
               <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#1581#1608#0" expanded="true" />
-                <element signature="e#1710#1751#0" expanded="true" />
-                <element signature="e#6845#6862#0" expanded="true" />
+                <element signature="e#2773#2899#0" expanded="true" />
+                <element signature="e#2888#2889#0" expanded="true" />
+                <element signature="e#3348#3561#0" expanded="true" />
+                <element signature="e#3550#3551#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Hierarchy.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/alfrescodev/client/data/Hierarchy.java">
+      <file leaf-file-name="LinksManageMenu.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/alfrescodev/client/widget/LinksManageMenu.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="85" column="6" selection-start="1759" selection-end="2843" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="GwtTestApp.java" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/test/java/com/alfrescodev/client/GwtTestApp.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="208" column="44" selection-start="7889" selection-end="7889" vertical-scroll-proportion="0.8158845">
+            <state line="315" column="7" selection-start="11369" selection-end="11369" vertical-scroll-proportion="0.0">
               <folding>
-                <element signature="e#4388#4397#0" expanded="true" />
-                <element signature="e#6193#6202#0" expanded="true" />
+                <element signature="e#4042#4411#0" expanded="true" />
+                <element signature="e#4400#4401#0" expanded="true" />
+                <element signature="e#4547#4820#0" expanded="true" />
+                <element signature="e#4809#4810#0" expanded="true" />
+                <element signature="e#5473#5479#0" expanded="true" />
+                <element signature="e#7672#7795#0" expanded="true" />
+                <element signature="e#7784#7785#0" expanded="true" />
+                <element signature="e#8133#8256#0" expanded="true" />
+                <element signature="e#8245#8246#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="README.md" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/README.md">
+      <file leaf-file-name="AddLinksMenu.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/alfrescodev/client/widget/AddLinksMenu.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="6" column="12" selection-start="246" selection-end="246" vertical-scroll-proportion="0.0">
+            <state line="109" column="4" selection-start="2942" selection-end="3066" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="e#1195#1201#0" expanded="true" />
+                <element signature="e#2354#2369#0" expanded="true" />
+                <element signature="e#2553#2899#0" expanded="true" />
+                <element signature="e#2888#2889#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CanvasApp.html" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/CanvasApp.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="28" column="38" selection-start="1288" selection-end="1288" vertical-scroll-proportion="0.48135594">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="HierarchyPathFinder.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/alfrescodev/client/data/HierarchyPathFinder.java">
+      <file leaf-file-name="showcase.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/showcase.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="72" column="59" selection-start="1958" selection-end="1958" vertical-scroll-proportion="0.0">
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#382#412#0" expanded="true" />
-                <element signature="e#837#846#0" expanded="true" />
-              </folding>
+            <state line="13" column="75" selection-start="603" selection-end="603" vertical-scroll-proportion="-8.5">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CircleWidget.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/alfrescodev/client/widget/CircleWidget.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="70" column="63" selection-start="2341" selection-end="2341" vertical-scroll-proportion="0.0">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -169,22 +227,22 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/src/main/resources/com/alfrescodev/App.gwt.xml" />
-        <option value="$PROJECT_DIR$/src/test/resources/com/alfrescodev/AppJUnit.gwt.xml" />
-        <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" />
-        <option value="$PROJECT_DIR$/src/main/webapp/CanvasApp.css" />
+        <option value="$PROJECT_DIR$/src/main/java/com/alfrescodev/client/widget/DeleteLinksMenu.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/CanvasApp.html" />
+        <option value="$PROJECT_DIR$/src/main/java/com/alfrescodev/client/action/OkCancelAction.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/alfrescodev/client/action/RedrawHandler.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/alfrescodev/client/data/IndexHolder.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/alfrescodev/client/data/Node.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/alfrescodev/client/figure/Circle.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/alfrescodev/client/data/HierarchyPathFinder.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/CanvasApp.html" />
-        <option value="$PROJECT_DIR$/src/main/webapp/showcase.html" />
-        <option value="$PROJECT_DIR$/src/main/java/com/alfrescodev/client/CanvasApp.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/alfrescodev/client/data/Hierarchy.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/alfrescodev/client/data/HierarchyPathFinder.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/alfrescodev/client/figure/Circle.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/alfrescodev/client/figure/HierarchyRepresentation.java" />
-        <option value="$PROJECT_DIR$/README.md" />
-        <option value="$PROJECT_DIR$/src/test/java/com/alfrescodev/client/GwtTestApp.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/alfrescodev/client/widget/AddLinksMenu.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/alfrescodev/client/widget/CircleWidget.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/alfrescodev/client/widget/LinksManageMenu.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/alfrescodev/client/widget/NodeHighlightContextMenu.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/alfrescodev/client/CanvasApp.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/showcase.html" />
       </list>
     </option>
   </component>
@@ -228,146 +286,13 @@
     </navigator>
     <panes>
       <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
             <PATH_ELEMENT>
               <option name="myItemId" value="hierarchypath" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="External Libraries" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="hierarchypath" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="External Libraries" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Maven: com.google.gwt:gwt-servlet:2.6.1" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="gwt-servlet-2.6.1.jar" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="hierarchypath" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="External Libraries" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Maven: com.google.gwt:gwt-servlet:2.6.1" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="gwt-servlet-2.6.1.jar" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="google" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="hierarchypath" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="External Libraries" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Maven: com.google.gwt:gwt-servlet:2.6.1" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="gwt-servlet-2.6.1.jar" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="google" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="gwt" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="hierarchypath" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="External Libraries" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Maven: com.google.gwt:gwt-servlet:2.6.1" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="gwt-servlet-2.6.1.jar" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="google" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="gwt" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="canvas" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="hierarchypath" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="External Libraries" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Maven: com.google.gwt:gwt-servlet:2.6.1" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="gwt-servlet-2.6.1.jar" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="google" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="gwt" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="canvas" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="client" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
@@ -451,36 +376,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="webapp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="hierarchypath" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="hierarchypath" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="webapp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="gwt" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="standard" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -596,6 +491,36 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="widget" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="hierarchypath" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="hierarchypath" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="client" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="figure" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -630,9 +555,38 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="hierarchypath" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="hierarchypath" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="client" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="action" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -647,12 +601,18 @@
     <property name="MemberChooser.copyJavadoc" value="false" />
     <property name="GoToClass.toSaveIncludeLibraries" value="false" />
     <property name="restartRequiresConfirmation" value="true" />
-    <property name="FullScreen" value="false" />
     <property name="MemberChooser.showClasses" value="true" />
+    <property name="FullScreen" value="false" />
     <property name="GoToClass.includeLibraries" value="false" />
-    <property name="dynamic.classpath" value="false" />
-    <property name="options.searchVisible" value="true" />
     <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="options.searchVisible" value="true" />
+    <property name="dynamic.classpath" value="false" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Superman\Documents\Development\Git\hierarchyPath\hierarchypath\src\main\webapp\images" />
+      <recent name="C:\Users\Superman\Documents\Development\Git\hierarchyPath\hierarchypath\src\main\webapp\gwt\standard\images" />
+    </key>
   </component>
   <component name="RunManager" selected="Maven.package">
     <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
@@ -691,6 +651,19 @@
       <option name="PORT" value="5005" />
       <method />
     </configuration>
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <module name="" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="HTML_FILE_NAME" />
+      <option name="HTML_USED" value="false" />
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <option name="VM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <method />
+    </configuration>
     <configuration default="true" type="TestNG" factoryName="TestNG">
       <module name="" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
@@ -716,19 +689,6 @@
       <envs />
       <properties />
       <listeners />
-      <method />
-    </configuration>
-    <configuration default="true" type="Applet" factoryName="Applet">
-      <module name="" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="HTML_FILE_NAME" />
-      <option name="HTML_USED" value="false" />
-      <option name="WIDTH" value="400" />
-      <option name="HEIGHT" value="300" />
-      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
-      <option name="VM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
       <method />
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
@@ -978,21 +938,21 @@
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32897863" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.27078384" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.29334918" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="true" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2682334" sideWeight="0.14489311" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19714965" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.19833729" sideWeight="0.5" order="10" side_tool="true" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2884927" sideWeight="0.16270784" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32897863" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2682334" sideWeight="0.567696" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2862233" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2884927" sideWeight="0.80285037" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2862233" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
@@ -1062,127 +1022,153 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://C:/Program Files/Java/jdk1.7.0_25/src.zip!/java/lang/Object.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/alfrescodev/client/widget/DeleteLinksMenu.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="212" column="70" selection-start="9159" selection-end="9225" vertical-scroll-proportion="0.33333334">
+        <state line="117" column="32" selection-start="4163" selection-end="4163" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/CanvasApp.html">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/alfrescodev/client/action/OkCancelAction.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="26" column="80" selection-start="1224" selection-end="1242" vertical-scroll-proportion="-9.153846">
+        <state line="16" column="34" selection-start="269" selection-end="269" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/showcase.html">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/alfrescodev/client/action/RedrawHandler.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="53" selection-start="833" selection-end="833" vertical-scroll-proportion="-5.8846154">
+        <state line="11" column="21" selection-start="182" selection-end="182" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.7.0_25/src.zip!/java/util/List.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/alfrescodev/client/figure/Circle.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="598" column="12" selection-start="27149" selection-end="27149" vertical-scroll-proportion="0.7929985">
+        <state line="41" column="23" selection-start="1115" selection-end="1115" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/alfrescodev/client/data/Node.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="39" column="17" selection-start="1358" selection-end="1362" vertical-scroll-proportion="-25.08">
-          <folding />
+        <state line="12" column="13" selection-start="213" selection-end="213" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#2544#2553#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/AppTest-dev.launch">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/alfrescodev/client/data/Hierarchy.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="34" selection-start="1533" selection-end="1533" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/AppTest-prod.launch">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="73" selection-start="1532" selection-end="1532" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/com/google/gwt/gwt-user/2.6.1/gwt-user-2.6.1-sources.jar!/com/google/gwt/junit/client/GWTTestCase.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="45" column="22" selection-start="1699" selection-end="1699" vertical-scroll-proportion="0.07020548">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/resources/com/alfrescodev/AppJUnit.gwt.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/com/alfrescodev/App.gwt.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="49" selection-start="901" selection-end="901" vertical-scroll-proportion="0.533101">
+        <state line="10" column="13" selection-start="164" selection-end="164" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/alfrescodev/client/data/HierarchyPathFinder.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="72" column="59" selection-start="1958" selection-end="1958" vertical-scroll-proportion="0.0">
+        <state line="16" column="4" selection-start="379" selection-end="441" vertical-scroll-proportion="0.0">
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#382#412#0" expanded="true" />
-            <element signature="e#837#846#0" expanded="true" />
+            <element signature="e#939#948#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/alfrescodev/client/data/IndexHolder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="41" column="41" selection-start="1050" selection-end="1050" vertical-scroll-proportion="0.0">
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/alfrescodev/client/figure/HierarchyRepresentation.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="63" column="64" selection-start="2451" selection-end="2451" vertical-scroll-proportion="0.0">
+        <state line="517" column="7" selection-start="17590" selection-end="17590" vertical-scroll-proportion="0.0">
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1581#1608#0" expanded="true" />
-            <element signature="e#1710#1751#0" expanded="true" />
-            <element signature="e#6845#6862#0" expanded="true" />
+            <element signature="e#6047#6166#0" expanded="true" />
+            <element signature="e#6155#6156#0" expanded="true" />
+            <element signature="e#13380#13403#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/alfrescodev/client/widget/CircleWidget.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="70" column="63" selection-start="2341" selection-end="2341" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/alfrescodev/client/widget/AddLinksMenu.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="109" column="4" selection-start="2942" selection-end="3066" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="e#1195#1201#0" expanded="true" />
+            <element signature="e#2354#2369#0" expanded="true" />
+            <element signature="e#2553#2899#0" expanded="true" />
+            <element signature="e#2888#2889#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/alfrescodev/client/widget/LinksManageMenu.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="315" column="7" selection-start="11369" selection-end="11369" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="e#4042#4411#0" expanded="true" />
+            <element signature="e#4400#4401#0" expanded="true" />
+            <element signature="e#4547#4820#0" expanded="true" />
+            <element signature="e#4809#4810#0" expanded="true" />
+            <element signature="e#5473#5479#0" expanded="true" />
+            <element signature="e#7672#7795#0" expanded="true" />
+            <element signature="e#7784#7785#0" expanded="true" />
+            <element signature="e#8133#8256#0" expanded="true" />
+            <element signature="e#8245#8246#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/alfrescodev/client/widget/NodeHighlightContextMenu.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="372" column="50" selection-start="14149" selection-end="14149" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="e#6682#6813#0" expanded="true" />
+            <element signature="e#6802#6803#0" expanded="true" />
+            <element signature="e#6874#7006#0" expanded="true" />
+            <element signature="e#6995#6996#0" expanded="true" />
+            <element signature="e#7059#7187#0" expanded="true" />
+            <element signature="e#7176#7177#0" expanded="true" />
+            <element signature="e#13161#13167#0" expanded="true" />
+            <element signature="e#13619#13625#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/alfrescodev/client/CanvasApp.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="58" column="40" selection-start="2136" selection-end="2136" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/alfrescodev/client/data/Hierarchy.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="85" column="6" selection-start="1759" selection-end="2843" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="12" selection-start="246" selection-end="246" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/alfrescodev/client/GwtTestApp.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="208" column="44" selection-start="7889" selection-end="7889" vertical-scroll-proportion="0.8158845">
+        <state line="40" column="35" selection-start="1615" selection-end="1615" vertical-scroll-proportion="0.0">
           <folding>
-            <element signature="e#4388#4397#0" expanded="true" />
-            <element signature="e#6193#6202#0" expanded="true" />
+            <element signature="e#2773#2899#0" expanded="true" />
+            <element signature="e#2888#2889#0" expanded="true" />
+            <element signature="e#3348#3561#0" expanded="true" />
+            <element signature="e#3550#3551#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/showcase.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="13" column="75" selection-start="603" selection-end="603" vertical-scroll-proportion="-8.5">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/CanvasApp.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="28" column="38" selection-start="1288" selection-end="1288" vertical-scroll-proportion="0.48135594">
+          <folding />
         </state>
       </provider>
     </entry>

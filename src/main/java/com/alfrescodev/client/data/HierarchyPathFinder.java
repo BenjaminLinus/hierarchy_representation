@@ -1,11 +1,9 @@
 package com.alfrescodev.client.data;
 
-import com.google.gwt.user.client.Window;
-
 import java.util.*;
 
 /**
- * The class for searching path in hierarchy
+ * The class for searching path in hierarchy.
  *
  * @author Alfrescodev.com
  *
@@ -16,6 +14,9 @@ public class HierarchyPathFinder {
     private LevelHolder levelHolder = new LevelHolder();
     private Map<Integer, Collection<Integer>> nodesMap = new HashMap<Integer, Collection<Integer>>();
 
+    /**
+     * The class holds a level value in hierarchy.
+     */
     private class LevelHolder {
 
         private int level;
@@ -34,6 +35,11 @@ public class HierarchyPathFinder {
         this.hierarchy = hierarchy;
     }
 
+    /**
+     * The main method to find a path.
+     *
+     * @return
+     */
     private List<Integer> createPathList() {
         List<Integer> path = new ArrayList<Integer>();
         createLevelsMap(hierarchy.getNodes().keySet());
@@ -45,10 +51,22 @@ public class HierarchyPathFinder {
         return path;
     }
 
+    /**
+     * The method returns the path in hierarchy.
+     *
+     * @param hierarchy
+     * @return
+     */
     public static List<Integer> createListFromHierarchy(Hierarchy hierarchy) {
         return new HierarchyPathFinder(hierarchy).createPathList();
     }
 
+    /**
+     *
+     * The method splits the hierarchy by levels.
+     *
+     * @param nodes
+     */
     private void createLevelsMap(Collection<Integer> nodes) {
         if (nodes!=null && nodes.size() > 0) {
             int level = markLevel(nodes);
@@ -72,6 +90,14 @@ public class HierarchyPathFinder {
         return level;
     }
 
+    /**
+     *
+     * The method sets the level to node with clear level.
+     *
+     * @param node
+     * @param level
+     * @return
+     */
     private int markLevelRecursively(Node node, int level) {
         createLevelsMap(node.getParentIds());
         if (levelHolder.getLevel() > level) {

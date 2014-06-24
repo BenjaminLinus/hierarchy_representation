@@ -15,9 +15,9 @@ public class Hierarchy implements Cloneable {
 
     private Map<Integer, Node> nodes;
 
-    private static List<Integer> newRandomParentsList(int id) {
+    private static Set<Integer> newRandomParentsList(int id) {
         int parentsCount = (int) ( Math.random() * id );
-        List<Integer> parentIds = new ArrayList<Integer>();
+        Set<Integer> parentIds = new HashSet<Integer>();
         for (int j=0; j < parentsCount; ++j) {
             int parentId = (int) ( Math.random() * id );
             parentIds.add(parentId);
@@ -25,12 +25,19 @@ public class Hierarchy implements Cloneable {
         return parentIds;
     }
 
+    /**
+     *
+     * The method creates new randomly generated hierarchy object.
+     *
+     * @param maxNodesCount - max count of nodes in the random hiearachy.
+     * @return randomly generated instance of Hierarchy
+     */
     public static Hierarchy generateRandomHierarchy(int maxNodesCount) {
         Hierarchy hierarchy = new Hierarchy();
         hierarchy.nodes = new HashMap<Integer, Node>();
         int count = (int) (Math.random()*maxNodesCount) + 3;
         for (int id = 0; id < count; ++id) {
-            List<Integer> parentIds = newRandomParentsList(id);
+            Set<Integer> parentIds = newRandomParentsList(id);
             //Window.alert("id = " + id);
             //Window.alert("parentIds = " + parentIds);
             Node node = new Node(id, parentIds);
@@ -39,22 +46,47 @@ public class Hierarchy implements Cloneable {
         return hierarchy;
     }
 
+    /**
+     * The method creates new node id hierarchy.
+     *
+     * @param hierarchy
+     * @param id - id of the new node.
+     */
     public static void newNode(Hierarchy hierarchy, int id) {
         Node node = new Node(id, null);
         hierarchy.nodes.put(node.getId(), node);
     }
 
+    /**
+     * The method creates new node id hierarchy.
+     *
+     * @param hierarchy
+     * @param id - id of the new node.
+     * @param parentIds - parent ids of the new node.
+     */
     public static void newNode(Hierarchy hierarchy, int id, Integer... parentIds) {
-        Node node = new Node(id, Arrays.asList(parentIds));
+        Node node = new Node(id, new HashSet<Integer>(Arrays.asList(parentIds)));
         hierarchy.nodes.put(node.getId(), node);
     }
 
+    /**
+     *
+     * The method creates new clear hierarchy.
+     *
+     * @return
+     */
     public static Hierarchy clearHierarchy() {
         Hierarchy hierarchy = new Hierarchy();
         hierarchy.nodes = new HashMap<Integer, Node>();
         return hierarchy;
     }
 
+    /**
+     *
+     * Test example of hierarchy.
+     *
+     * @return
+     */
     public static Hierarchy newTestHierarchy3() {
         Hierarchy hierarchy = Hierarchy.clearHierarchy();
 
@@ -85,6 +117,30 @@ public class Hierarchy implements Cloneable {
         return hierarchy;
     }
 
+    /**
+     *
+     * Test example of hierarchy.
+     *
+     * @return
+     */
+    public static Hierarchy newTestSmallHierarchy4() {
+        Hierarchy hierarchy = Hierarchy.clearHierarchy();
+
+        Hierarchy.newNode(hierarchy, 0);
+        Hierarchy.newNode(hierarchy, 1, 0);
+        Hierarchy.newNode(hierarchy, 2, 0, 1);
+        Hierarchy.newNode(hierarchy, 3);
+        Hierarchy.newNode(hierarchy, 4, 0, 3);
+
+        return hierarchy;
+    }
+
+    /**
+     *
+     * Test example of hierarchy.
+     *
+     * @return
+     */
     public static Hierarchy newTestHierarchy2() {
         Hierarchy hierarchy = clearHierarchy();
         newNode(hierarchy, 0);
@@ -105,6 +161,12 @@ public class Hierarchy implements Cloneable {
         return hierarchy;
     }
 
+    /**
+     *
+     * Test example of hierarchy.
+     *
+     * @return
+     */
     public static Hierarchy newTestHierarchy() {
         Hierarchy hierarchy = clearHierarchy();
 
@@ -143,10 +205,20 @@ public class Hierarchy implements Cloneable {
         return hierarchy;
     }
 
+    /**
+     * The method returns hierarchy nodes Map.
+     *
+     * @return
+     */
     public Map<Integer, Node> getNodes() {
         return nodes;
     }
 
+    /**
+     * The method returns a new copy of the hierarchy.
+     *
+     * @return an instance of the hierarchy.
+     */
     public Hierarchy clone() {
         Hierarchy cloned = new Hierarchy();
         cloned.nodes = new HashMap<Integer, Node>();
@@ -155,5 +227,30 @@ public class Hierarchy implements Cloneable {
             cloned.nodes.put(id, node);
         }
         return cloned;
+    }
+
+    /**
+     * The method adds to the hierarchy a new node with next free id.
+     */
+    public void addNewNode() {
+        int newId = maxNodesId() + 1;
+        nodes.put(newId, new Node(newId));
+    }
+
+    /**
+     *
+     * The method finds and return max node id in hierarchy.
+     *
+     * @return
+     */
+    private int maxNodesId() {
+        int maxId = 0;
+        if (nodes!=null && !nodes.isEmpty()) {
+            for (int nodeId : nodes.keySet()) {
+                if (nodeId > maxId)
+                    maxId = nodeId;
+            }
+        }
+        return maxId;
     }
 }

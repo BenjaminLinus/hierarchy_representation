@@ -4,11 +4,11 @@ import com.google.gwt.canvas.dom.client.Context2d;
 import com.google.gwt.canvas.dom.client.CssColor;
 
 /**
- * Created with IntelliJ IDEA.
- * User: Superman
- * Date: 12.06.14
- * Time: 19:39
- * To change this template use File | Settings | File Templates.
+ *
+ * This figure represents circle on canvas.
+ *
+ * @author Alfrescodev.com
+ *
  */
 public class Circle {
 
@@ -40,12 +40,10 @@ public class Circle {
         context.setTextAlign(Context2d.TextAlign.CENTER);
         context.closePath();
         context.fill();
-        //context.stroke();
 
         context.setFillStyle(BLACK);
         context.beginPath();
         context.strokeText("" + id, posX, posY + TEXT_Y_PADDING);
-        //context.strokeText(""+level, posX, posY+12);
         context.closePath();
         context.fill();
     }

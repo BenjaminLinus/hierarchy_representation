@@ -34,11 +34,23 @@ public class IndexHolder {
         return newIndexHolder;
     }
 
+    /**
+     *
+     * The method returns existing or creates the new instance
+     * of IndexHolder with value equals to initVal.
+     *
+     * @param initVal - IndexHolder value
+     * @return
+     */
     public static IndexHolder getInstance(int initVal) {
         IndexHolder newInstance = findOrCreate(initVal);
         return newInstance;
     }
 
+    /**
+     *
+     * @return all instances of IndexHolder
+     */
     public static List<IndexHolder> getInstances() {
         return instances;
     }
@@ -47,6 +59,12 @@ public class IndexHolder {
         return value;
     }
 
+    /**
+     *
+     * The method changes all instances with old value and sets the new value to it.
+     *
+     * @param val - the new value
+     */
     public void reSetValue(int val) {
         int oldVal = this.value;
         for (IndexHolder indexHolder:instances) {

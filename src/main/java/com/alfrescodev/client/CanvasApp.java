@@ -1,21 +1,14 @@
 package com.alfrescodev.client;
 
 import com.alfrescodev.client.data.Hierarchy;
-import com.alfrescodev.client.data.HierarchyPathFinder;
-import com.alfrescodev.client.figure.Circle;
 import com.alfrescodev.client.figure.HierarchyRepresentation;
 import com.google.gwt.canvas.client.Canvas;
-import com.google.gwt.canvas.dom.client.Context2d;
-import com.google.gwt.canvas.dom.client.CssColor;
 import com.google.gwt.core.client.EntryPoint;
+import com.google.gwt.dom.client.Style;
+import com.google.gwt.event.dom.client.ClickEvent;
+import com.google.gwt.event.dom.client.ClickHandler;
 import com.google.gwt.user.client.Window;
-import com.google.gwt.user.client.ui.HTML;
-import com.google.gwt.user.client.ui.InlineLabel;
-import com.google.gwt.user.client.ui.Label;
-import com.google.gwt.user.client.ui.RootPanel;
-
-import java.util.Collection;
-import java.util.HashMap;
+import com.google.gwt.user.client.ui.*;
 
 /**
  *
@@ -29,51 +22,100 @@ import java.util.HashMap;
  */
 public class CanvasApp implements EntryPoint {
 
-    static final String holderId = "canvas-container";
+    public static final String CANVAS_HOLDER_ID = "canvas-wrapper";
+    private static final String BUTTONS_HOLDER_ID = "control-buttons";
+    private static final String BUTTON_STYLE_NAME = "action-button";
+    private static final int BUTTON_WIDTH = 100;
+    private static final int BUTTON_MARGIN_X = 20;
+    private static final String CLEAR_CONFIRM_MESSAGE = "Are you sure to clear workspace?";
 
-    static final String upgradeMessage = "Your browser does not support the HTML5 Canvas. Please upgrade your browser to view this page.";
+    private static final String upgradeMessage = "Your browser does not support the HTML5 Canvas. " +
+            "Please upgrade your browser to view this page.";
 
-    static final int height = 400;
-    static final int width = 400;
+    private static final int height = 400;
+    private static final int width = 400;
+    private static final int BUTTONS_PADDING_Y = 12;
+    private static final int HIERARHY_DEFAULT_MAX_COUNT = 30;
 
-    Canvas canvas;
+    /**
+     * The main hierarchy to paint.
+     */
+    private Hierarchy hierarchy;
 
-    final CssColor redrawColor = CssColor.make("rgba(255,0,0,1)");
-    Context2d context;
-
+    /**
+     * The main module method.
+     */
     public void onModuleLoad() {
-        canvas = Canvas.createIfSupported();
+        Canvas canvas = Canvas.createIfSupported();
         if (canvas == null) {
-            RootPanel.get(holderId).add(new Label(upgradeMessage));
+            RootPanel.get(CANVAS_HOLDER_ID).add(new Label(upgradeMessage));
             return;
         }
         canvas.setWidth(width + "px");
         canvas.setHeight(height + "px");
         canvas.setCoordinateSpaceWidth(width);
         canvas.setCoordinateSpaceHeight(height);
-        RootPanel.get(holderId).add(canvas);
-        context = canvas.getContext2d();
-        Hierarchy hierarchy = Hierarchy.newTestHierarchy3();
-        //Hierarchy hierarchy = Hierarchy.generateRandomHierarchy(30);
-        Hierarchy originHierarchy = hierarchy.clone();
-        HierarchyRepresentation.drawHierarchy(canvas, hierarchy);
-        Collection<Integer> c = HierarchyPathFinder.createListFromHierarchy(originHierarchy);
-        printList(c);
+        RootPanel canvasHolder = RootPanel.get(CANVAS_HOLDER_ID);
+        //hierarchy = Hierarchy.newTestSmallHierarchy4();
+        //hierarchy = Hierarchy.newTestHierarchy();
+        hierarchy = Hierarchy.generateRandomHierarchy(HIERARHY_DEFAULT_MAX_COUNT);
+        HierarchyRepresentation.drawHierarchy(canvasHolder, canvas, hierarchy);
+        addButtons();
     }
 
-    private void printList(Collection<Integer> list) {
-        StringBuilder listText = new StringBuilder("");
-        int i = 0;
-        for (int id:list) {
-            listText.append(id);
-            if (i < (list.size() - 1)) {
-                listText.append(", ");
+    private Button createNewNodeButton() {
+        Button button = new Button("New node");
+        button.addStyleName(BUTTON_STYLE_NAME);
+        button.setWidth(BUTTON_WIDTH + "px");
+        button.getElement().getStyle().setMarginRight(BUTTON_MARGIN_X, Style.Unit.PX);
+        button.addClickHandler(new ClickHandler() {
+            public void onClick(ClickEvent event) {
+                addNewNode();
             }
-            else {
-                listText.append(";");
-            }
-            ++i;
-        }
-        RootPanel.get("nodes-list").add(new InlineLabel(listText.toString()));
+        });
+        return button;
     }
+
+    private void addNewNode() {
+        hierarchy.addNewNode();
+        HierarchyRepresentation.redrawPlease();
+    }
+
+    private Button createClearButton() {
+        Button button = new Button("Clear");
+        button.addStyleName(BUTTON_STYLE_NAME);
+        button.setWidth(BUTTON_WIDTH + "px");
+        button.getElement().getStyle().setMarginLeft(BUTTON_MARGIN_X, Style.Unit.PX);
+        button.addClickHandler(new ClickHandler() {
+            public void onClick(ClickEvent event) {
+                if (Window.confirm(CLEAR_CONFIRM_MESSAGE)) {
+                    clearWorkspace();
+                }
+            }
+        });
+        return button;
+    }
+
+    private void clearWorkspace() {
+        hierarchy.getNodes().clear();
+        HierarchyRepresentation.redrawPlease();
+    }
+
+    /**
+     * The method adds "New node" and "Clear" buttons to page.
+     */
+    private void addButtons() {
+        FlowPanel buttonsPanel = new FlowPanel();
+        buttonsPanel.getElement().getStyle().setDisplay(Style.Display.BLOCK);
+        buttonsPanel.getElement().getStyle().setTextAlign(Style.TextAlign.CENTER);
+        buttonsPanel.getElement().getStyle().setPaddingTop(BUTTONS_PADDING_Y, Style.Unit.PX);
+        buttonsPanel.setWidth("100%");
+        HorizontalPanel buttonsHorizontalPanel = new HorizontalPanel();
+        buttonsHorizontalPanel.add(createNewNodeButton());
+        buttonsHorizontalPanel.add(createClearButton());
+        buttonsHorizontalPanel.getElement().getStyle().setDisplay(Style.Display.INLINE_BLOCK);
+        buttonsPanel.add(buttonsHorizontalPanel);
+        RootPanel.get(BUTTONS_HOLDER_ID).add(buttonsPanel);
+    }
+
 }

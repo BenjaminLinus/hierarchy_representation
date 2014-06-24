@@ -1,19 +1,23 @@
 package com.alfrescodev.client.figure;
 
+import com.alfrescodev.client.action.RedrawHandler;
 import com.alfrescodev.client.data.Hierarchy;
+import com.alfrescodev.client.data.HierarchyPathFinder;
 import com.alfrescodev.client.data.IndexHolder;
 import com.alfrescodev.client.data.Node;
+import com.alfrescodev.client.widget.CircleWidget;
+import com.alfrescodev.client.widget.NodeHighlightContextMenu;
 import com.google.gwt.canvas.client.Canvas;
 import com.google.gwt.canvas.dom.client.Context2d;
 import com.google.gwt.canvas.dom.client.CssColor;
 import com.google.gwt.dom.client.Touch;
 import com.google.gwt.event.dom.client.*;
 import com.google.gwt.user.client.Window;
+import com.google.gwt.user.client.ui.InlineLabel;
+import com.google.gwt.user.client.ui.RootPanel;
+import com.google.gwt.user.client.ui.Widget;
 
-import java.util.Collection;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Map;
+import java.util.*;
 
 /**
  *
@@ -36,6 +40,11 @@ public class HierarchyRepresentation {
     private static final int PADDING_LEFT = 5;
     private static final int PADDING_TOP = 5;
     private static final CssColor ITEM_COLOR = GRAYBLUE_COLOR2;
+    private static final String NODE_NAME_CANVAS = "canvas";
+    private static final String NODES_LIST_ID = "nodes-list";
+    private static final String NODES_LIST_TITLE_ID = "nodes-list-title";
+    private static final String NODES_LIST_TITLE_DEFAULT = "The nodes list:";
+    private static final String NODES_LIST_TITLE_EMPTY = "The nodes list is empty.";
 
     private Map<Integer, Collection<Node>> nodesMap = new HashMap<Integer, Collection<Node>>();
     private Map<Integer, Map<Integer, Collection<Node>>> nodesByIndexMap =
@@ -43,31 +52,83 @@ public class HierarchyRepresentation {
 
     private LevelHolder levelHolder = new LevelHolder();
 
+    /**
+     * Variable for indexing hierarchies.
+     */
     private IndexHolder indexHolder = IndexHolder.getInstance(0);
     private int indexCounter = 0;
 
-    // mouse positions relative to canvas
-    private int mouseX, mouseY;
-
+    /**
+     * Variable for indexing hierarchies.
+     */
     private Integer currentIndex;
 
+    /**
+     * Representing hierarchy.
+     */
     private Hierarchy hierarchy;
 
+    /**
+     * Html canvas for painting.
+     */
     private Canvas canvas;
 
-    public Integer getIndexOf(int id) {
-        Integer index = null;
-        for (Map<Integer, Collection<Node>> levelMap : nodesByIndexMap.values()) {
-            for (Collection<Node> nodes : levelMap.values()) {
-                for (Node node:nodes) {
-                    if (node.getId() == id)
-                        index = node.getIndexHolder().getValue();
-                }
+    private RootPanel canvasHolder;
+
+    private static RedrawHandler redrawHandler;
+
+    /**
+     *
+     * The handler for a CircleWidget's mouse over event.
+     *
+     * @author Alfrescodev.com
+     *
+     */
+    private class CircleWidgetMouseHandler implements MouseOverHandler, MouseOutHandler {
+
+        private static final int MENU_MARGIN_RIGHT = 5;
+        private static final String MOUSE_OVERED_STYLE = "circle-mouse-overed";
+
+        /**
+         * Complicated CircleWidget
+         */
+        private CircleWidget circleWidget;
+
+        public CircleWidgetMouseHandler(CircleWidget circleWidget) {
+            this.circleWidget = circleWidget;
+        }
+
+        public void onMouseOver(final MouseOverEvent me) {
+            Widget widget = (Widget) me.getSource();
+            widget.addStyleName(MOUSE_OVERED_STYLE);
+            clearMainWidget();
+            circleWidget.getMainWidget().add(NodeHighlightContextMenu.
+                    getInstance(circleWidget, (int) circleWidget.getRadius(),
+                            circleWidget.getRadius() - MENU_MARGIN_RIGHT, 0.0, hierarchy));
+        }
+
+        public void onMouseOut(final MouseOutEvent me) {
+            Widget widget = (Widget) me.getSource();
+            widget.removeStyleName(MOUSE_OVERED_STYLE);
+            clearMainWidget();
+        }
+
+        private void clearMainWidget() {
+            Iterator<Widget> iterator = circleWidget.getMainWidget().iterator();
+            while (iterator.hasNext()) {
+                iterator.next().removeFromParent();
             }
         }
-        return index;
+
+        public void attach() {
+            circleWidget.addMouseOutHandler(this);
+            circleWidget.addMouseOverHandler(this);
+        }
     }
 
+    /**
+     * The class holds a level value in hierarchy.
+     */
     private static class LevelHolder {
 
         private int level;
@@ -86,27 +147,148 @@ public class HierarchyRepresentation {
 
     }
 
-    private HierarchyRepresentation(Hierarchy hierarchy, Canvas canvas) {
+    /**
+     *
+     * The method returns an index value of the node with the specified id.
+     *
+     * @param id
+     * @return
+     */
+    public Integer getIndexOf(int id) {
+        Integer index = null;
+        for (Map<Integer, Collection<Node>> levelMap : nodesByIndexMap.values()) {
+            for (Collection<Node> nodes : levelMap.values()) {
+                for (Node node:nodes) {
+                    if (node.getId() == id)
+                        index = node.getIndexHolder().getValue();
+                }
+            }
+        }
+        return index;
+    }
+
+    /**
+     *
+     * HierarchyRepresentation constructor.
+     *
+     * @param hierarchy
+     * @param canvas
+     * @param canvasHolder
+     */
+    private HierarchyRepresentation(Hierarchy hierarchy, Canvas canvas, RootPanel canvasHolder) {
         this(hierarchy);
         this.canvas = canvas;
+        this.canvasHolder = canvasHolder;
     }
 
+    /**
+     * Creates the handler for redraw request outside of this instance.
+     */
+    private void createRedrawHandler() {
+        redrawHandler = new RedrawHandler() {
+            public void redrawPlease() {
+                drawHierarchy();
+            }
+        };
+    }
+
+    /**
+     * the method executes redraw request.
+     */
+    public static void redrawPlease() {
+        if (redrawHandler != null) {
+            redrawHandler.redrawPlease();
+        }
+    }
+
+    /**
+     * The class constructor.
+     *
+     * @param hierarchy
+     */
     private HierarchyRepresentation(Hierarchy hierarchy) {
         this.hierarchy = hierarchy;
+        createRedrawHandler();
     }
 
-    public static void drawHierarchy(Canvas canvas, Hierarchy hierarchy) {
-        HierarchyRepresentation hierarchyRepresentation = new HierarchyRepresentation(hierarchy, canvas);
-        //Window.alert("hierarchy.getNodes().values() = "+hierarchy.getNodes().values());
-        hierarchyRepresentation.splitHierarchyByLevels(hierarchy.getNodes().keySet(), 0);
-        hierarchyRepresentation.splitNodesByIndex();
-        hierarchyRepresentation.drawNodesMap();
+    /**
+     *
+     * The method draws the hierarchy in the specified canvas
+     * and div, wrapped the canvas.
+     *
+     * @param canvasHolder - div, wrapped the canvas.
+     * @param canvas
+     * @param hierarchy
+     */
+    public static void drawHierarchy(RootPanel canvasHolder, Canvas canvas, Hierarchy hierarchy) {
+        HierarchyRepresentation hierarchyRepresentation =
+                new HierarchyRepresentation(hierarchy, canvas, canvasHolder);
+        hierarchyRepresentation.drawHierarchy();
     }
 
+    /**
+     * The method sets instance variables to clear values.
+     */
+    private void initVariables() {
+        nodesByIndexMap.clear();
+        levelHolder = new LevelHolder();
+        indexHolder = IndexHolder.getInstance(0);
+        indexCounter = 0;
+        nodesMap.clear();
+        for (Node node:hierarchy.getNodes().values()) {
+            node.setIndexHolder(null);
+            node.setLevel(null);
+        }
+    }
+
+    private void drawHierarchy() {
+        initVariables();
+        Hierarchy originHierarchy = hierarchy.clone();
+        splitHierarchyByLevels(hierarchy.getNodes().keySet(), 0);
+        splitNodesByIndex();
+        drawNodesMap();
+        Collection<Integer> c = HierarchyPathFinder.createListFromHierarchy(originHierarchy);
+        printList(c);
+    }
+
+    private void printList(Collection<Integer> list) {
+        StringBuilder listText = new StringBuilder("");
+        int i = 0;
+        for (int id:list) {
+            listText.append(id);
+            if (i < (list.size() - 1)) {
+                listText.append(", ");
+            }
+            else {
+                listText.append(";");
+            }
+            ++i;
+        }
+        RootPanel.get(NODES_LIST_ID).clear();
+        if (list != null && !list.isEmpty()) {
+            RootPanel.get(NODES_LIST_ID).add(new InlineLabel(listText.toString()));
+            RootPanel.get(NODES_LIST_TITLE_ID).getElement().setInnerHTML(NODES_LIST_TITLE_DEFAULT);
+        }
+        else {
+            RootPanel.get(NODES_LIST_TITLE_ID).getElement().setInnerHTML(NODES_LIST_TITLE_EMPTY);
+        }
+    }
+
+    /**
+     * The method creates a new instance of hierarchy.
+     *
+     * @param hierarchy
+     * @return
+     */
     public static HierarchyRepresentation getInstance(Hierarchy hierarchy) {
         return new HierarchyRepresentation(hierarchy);
     }
 
+    /**
+     * The method create nodesByIndexMap which maps
+     * indexes and independent sub-hierarchies of the root
+     * hierarchy.
+     */
     public void splitNodesByIndex() {
         for (int level:nodesMap.keySet()) {
             Collection<Node> nodes = nodesMap.get(level);
@@ -125,26 +307,45 @@ public class HierarchyRepresentation {
                 levelNodes.add(node);
             }
         }
-        nodesMap = null;
+        nodesMap.clear();
     }
 
-    private static void createCircles(Collection<Node> list, int maxLeveSize, int level,
-                                      Map<Integer, Circle> circlesMap, int offsetSize) {
+    /**
+     * The method creates new widget which represents the hierarchy's node.
+     *
+     * @param node - representing node.
+     * @param x - x-coord on canvas
+     * @param y - y-coord on canvas.
+     * @return new widget
+     */
+    private CircleWidget newCircleWidget(Node node, double x, double y) {
+        CircleWidget circleWidget = new CircleWidget(node, x, y, ITEM_RADIUS,
+                ITEM_COLOR.value(), node.getId(), canvas);
+        CircleWidgetMouseHandler mouseHandler = new CircleWidgetMouseHandler(circleWidget);
+        mouseHandler.attach();
+        return circleWidget;
+    }
+
+    private void createCircles(Collection<Node> list, int maxLeveSize, int level,
+                                      Map<Integer, CircleWidget> circlesMap, int offsetSize) {
         double k = (double) maxLeveSize / (double) list.size();
         int i = 0;
         for (Node node:list) {
             double x = PADDING_LEFT + offsetSize * ITEM_WIDTH + (i + 1) * ITEM_WIDTH * k - ITEM_WIDTH * k / 2;
             double y = PADDING_TOP + (level + 1) * ITEM_HEIGHT - ITEM_HEIGHT / 2;
-            Circle c = new Circle(x, y, ITEM_RADIUS, ITEM_COLOR, node.getId());
+            CircleWidget c = newCircleWidget(node, x, y);
             circlesMap.put(node.getId(), c);
-            c.setLevel(level);
-            //c.setLevel(node.getLevel());
-            //c.setLevel(node.getIndexHolder().getValue());
             ++i;
         }
     }
 
-    private void drawLinks(Map<Integer, Circle> circlesMap,
+    /**
+     * The method draws links between nodes on canvas.
+     *
+     * @param circlesMap
+     * @param context2d
+     */
+    private void drawLinks(Map<Integer, CircleWidget> circlesMap,
                                   Context2d context2d) {
 
         for (int index:nodesByIndexMap.keySet()) {
@@ -157,7 +358,15 @@ public class HierarchyRepresentation {
         }
     }
 
-    private static void drawLinks(Map<Integer, Circle> circlesMap, Node node,
+    /**
+     * The method draws links between nodes on canvas.
+     *
+     * @param circlesMap
+     * @param node
+     * @param context2d
+     * @param hierarchy
+     */
+    private static void drawLinks(Map<Integer, CircleWidget> circlesMap, Node node,
                                   Context2d context2d, Hierarchy hierarchy) {
         if (node.getParentIds() != null && node.getParentIds().size() > 0) {
             for (Integer pid:node.getParentIds()) {
@@ -176,11 +385,22 @@ public class HierarchyRepresentation {
         }
     }
 
+    /**
+     * The method draws hierarchy nodes on canvas.
+     */
     private void drawNodesMap() {
         int maxLeveSize = 0;
         int offsetSize = 0;
         int height = 0;
-        Map<Integer, Circle> circlesMap = new HashMap<Integer, Circle>();
+        canvasHolder.clear();
+        canvasHolder.add(canvas);
+        canvas.setCoordinateSpaceHeight(0);
+        canvas.setHeight(0 + "px");
+        canvas.setCoordinateSpaceWidth(0);
+        canvas.setWidth(0 + "px");
+        canvasHolder.setHeight(0 + "px");
+        canvasHolder.setWidth(0 + "px");
+        Map<Integer, CircleWidget> circlesMap = new HashMap<Integer, CircleWidget>();
         for (int index:nodesByIndexMap.keySet()) {
             offsetSize += maxLeveSize;
             maxLeveSize =  findMaxLevelSize(index);
@@ -188,9 +408,11 @@ public class HierarchyRepresentation {
             int newHeight = PADDING_TOP * 2 + ITEM_HEIGHT * nodesByIndexMap.get(index).keySet().size();
             if (newHeight > height) {
                 height = newHeight;
+                canvasHolder.setHeight(height + "px");
                 canvas.setHeight(height + "px");
                 canvas.setCoordinateSpaceHeight(height);
             }
+            canvasHolder.setWidth(width + "px");
             canvas.setWidth(width + "px");
             canvas.setCoordinateSpaceWidth(width);
             for (int level:nodesByIndexMap.get(index).keySet()) {
@@ -198,13 +420,30 @@ public class HierarchyRepresentation {
                 createCircles(list, maxLeveSize, level, circlesMap, offsetSize);
             }
         }
+        canvas.getContext2d().clearRect(0, 0,
+                canvas.getCoordinateSpaceWidth(), canvas.getCoordinateSpaceHeight());
         drawLinks(circlesMap, canvas.getContext2d());
-        drawCircles(circlesMap, canvas.getContext2d());
+        drawCircles(circlesMap, canvasHolder);
     }
 
-    private static void drawCircles(Map<Integer, Circle> circlesMap, Context2d context2d) {
-        for (Circle circle:circlesMap.values()) {
-            circle.draw(context2d);
+    /**
+     * The method clears canvas first,
+     * than adds widgets to diw which wraps the canvas.
+     * Widget represents hierarchy nodes.
+     *
+     * @param circlesMap
+     * @param canvasHolder
+     */
+    private static void drawCircles(Map<Integer, CircleWidget> circlesMap, RootPanel canvasHolder) {
+        Iterator<Widget> iterator = canvasHolder.iterator();
+        while (iterator.hasNext()) {
+            Widget widget = iterator.next();
+            if (!widget.getElement().getNodeName().toLowerCase().equals(NODE_NAME_CANVAS)) {
+                canvasHolder.remove(widget);
+            }
+        }
+        for (CircleWidget circle:circlesMap.values()) {
+            canvasHolder.add(circle);
         }
     }
 
@@ -218,6 +457,14 @@ public class HierarchyRepresentation {
         return maxLevelSize;
     }
 
+    /**
+     * The method recursively marks and sets levels to nodes.
+     *
+     * @param node
+     * @param deep
+     * @param level
+     * @return
+     */
     private int findNewLevel(Node node, int deep, int level) {
         splitHierarchyByLevels(node.getParentIds(), deep+1);
         if (levelHolder.getLevel() > level) {
@@ -236,17 +483,22 @@ public class HierarchyRepresentation {
         if (nodesSet == null) nodesSet = new HashSet<Node>();
         nodesSet.add(node);
         node.setLevel(levelHolder.getLevel());
-        //Window.alert("level setted. node = "+node+" nodes = "+nodesMap);
         nodesMap.put(levelHolder.getLevel(), nodesSet);
         node.setIndexHolder(indexHolder);
-        //Window.alert("setIndexHolder to "+node.getId()+"! indexHolder = " + indexHolder);
         return level;
     }
 
+    /**
+     * The method recursively marks and sets levels to nodes.
+     *
+     * @param node
+     * @param deep
+     * @param level
+     * @return
+     */
     private int findInheritedLevel(Node node, int deep, int level) {
         if (node.getLevel()!=null && node.getLevel() > level)
             level = node.getLevel();
-        //Window.alert("findInheritedLevel! currentIndex = "+currentIndex);
         /**
          * Indexing elements to split different independent hierarchies.
          */
@@ -262,6 +514,14 @@ public class HierarchyRepresentation {
         return level;
     }
 
+    /**
+     *
+     * The method recursively marks and sets levels to nodes.
+     *
+     * @param nodeIds
+     * @param deep
+     * @return
+     */
     private int findLevel(Collection<Integer> nodeIds, int deep) {
         int level = 0;
         currentIndex = null;
@@ -280,6 +540,12 @@ public class HierarchyRepresentation {
         return level;
     }
 
+    /**
+     * The method recursively marks and sets levels to nodes.
+     *
+     * @param nodes - nodes ids collection.
+     * @param deep - deep of recursion.
+     */
     public void splitHierarchyByLevels(Collection<Integer> nodes, int deep) {
         if (nodes!=null && nodes.size() > 0) {
             int level = findLevel(nodes, deep);
@@ -291,48 +557,6 @@ public class HierarchyRepresentation {
             //Window.alert("new indexHolder " + newVal);
             indexHolder = IndexHolder.getInstance(newVal);
         }
-    }
-
-    void initHandlers() {
-        canvas.addMouseMoveHandler(new MouseMoveHandler() {
-            public void onMouseMove(MouseMoveEvent event) {
-                mouseX = event.getRelativeX(canvas.getElement());
-                mouseY = event.getRelativeY(canvas.getElement());
-            }
-        });
-
-        canvas.addMouseOutHandler(new MouseOutHandler() {
-            public void onMouseOut(MouseOutEvent event) {
-                mouseX = -200;
-                mouseY = -200;
-            }
-        });
-
-        canvas.addTouchMoveHandler(new TouchMoveHandler() {
-            public void onTouchMove(TouchMoveEvent event) {
-                event.preventDefault();
-                if (event.getTouches().length() > 0) {
-                    Touch touch = event.getTouches().get(0);
-                    mouseX = touch.getRelativeX(canvas.getElement());
-                    mouseY = touch.getRelativeY(canvas.getElement());
-                }
-                event.preventDefault();
-            }
-        });
-
-        canvas.addTouchEndHandler(new TouchEndHandler() {
-            public void onTouchEnd(TouchEndEvent event) {
-                event.preventDefault();
-                mouseX = -200;
-                mouseY = -200;
-            }
-        });
-
-        canvas.addGestureStartHandler(new GestureStartHandler() {
-            public void onGestureStart(GestureStartEvent event) {
-                event.preventDefault();
-            }
-        });
     }
 
 }

@@ -1,7 +1,8 @@
 package com.alfrescodev.client.data;
 
 import java.util.Collection;
-import java.util.List;
+import java.util.HashSet;
+import java.util.Set;
 
 /**
  * The class represents node in hierarchy;
@@ -9,26 +10,52 @@ import java.util.List;
  * @author Alfrescodev.com
  *
  */
-public class Node {
+public class Node implements Comparable<Node> {
 
+    /**
+     * Id of the node
+     */
     private int id;
-    private Collection<Integer> parentIds;
+    /**
+     * Parents ids of the node.
+     */
+    private Set<Integer> parentIds;
+    /**
+     * Node's level in hierarchy
+     */
     private Integer level;
     /**
      * Nodes have indexes to split different independent hierarchies.
      */
     private IndexHolder indexHolder;
 
-    public Node(int nodeId, Collection<Integer> parentIds) {
-        this.id = nodeId;
+    /**
+     *
+     * Constructor creates new node.
+     *
+     * @param nodeId - id for the new node.
+     * @param parentIds - ids of parent nodes of the current node.
+     */
+    public Node(int nodeId, Set<Integer> parentIds) {
+        this(nodeId);
         this.parentIds = parentIds;
+    }
+
+    /**
+     *
+     * Constructor creates new node.
+     *
+     * @param nodeId - id for the new node.
+     */
+    public Node(int nodeId) {
+        this.id = nodeId;
     }
 
     public int getId() {
         return id;
     }
 
-    public Collection<Integer> getParentIds() {
+    public Set<Integer> getParentIds() {
         return parentIds;
     }
 
@@ -71,6 +98,54 @@ public class Node {
                 "id=" + id +
                 ", level=" + level +
                 ", indexHolder=" + indexHolder +
+                ", parents=" + parentIds +
                 '}';
+    }
+
+    public void addParentId(Integer id) {
+        if (parentIds == null)
+            parentIds = new HashSet<Integer>();
+        parentIds.add(id);
+    }
+
+    /**
+     *
+     * The method converts a collection of nodes to collection of integers.
+     * Integers represents node's ids.
+     *
+     * @param nodesList
+     * @return
+     */
+    public static Collection<Integer> getIdsList(Collection<Node> nodesList) {
+        Set<Integer> ids = new HashSet<Integer>();
+        for (Node node : nodesList) {
+            ids.add(node.getId());
+        }
+        return ids;
+    }
+
+    /**
+     *
+     * The method overwrites node's parents to new values.
+     *
+     * @param newIds - new parent ids.
+     */
+    public void clearAndAddParentsIds(Collection<Integer> newIds) {
+        if (this.parentIds == null)
+            this.parentIds = new HashSet<Integer>();
+        parentIds.clear();
+        parentIds.addAll(newIds);
+    }
+
+    /**
+     *
+     * Compare nodes.
+     *
+     * @param o
+     * @return
+     */
+    public int compareTo(Node o) {
+        return new Integer(id).compareTo(o.id);
+
     }
 }
