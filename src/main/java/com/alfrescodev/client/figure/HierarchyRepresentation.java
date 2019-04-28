@@ -25,12 +25,7 @@ import java.util.*;
  */
 public class HierarchyRepresentation {
 
-    private static final CssColor REDRAW_COLOR = CssColor.make("rgba(255,0,0,1)");
-    private static final CssColor LIGHTBLUE_COLOR = CssColor.make("rgba(222,243,255,1)");
-    private static final CssColor BLUE_COLOR = CssColor.make("rgba(146,208,243,1)");
-    private static final CssColor GRAYBLUE_COLOR = CssColor.make("rgba(158,198,222,1)");
     private static final CssColor GRAYBLUE_COLOR2 = CssColor.make("rgba(159,194,215,1)");
-    private static final CssColor WHITE_COLOR = CssColor.make("rgba(255,255,255,1)");
     private static final int ITEM_WIDTH = 160;
     private static final int ITEM_HEIGHT = 160;
     private static final int ITEM_RADIUS = (ITEM_HEIGHT - 6) / 4;
@@ -172,7 +167,7 @@ public class HierarchyRepresentation {
      * @param canvas
      * @param canvasHolder
      */
-    private HierarchyRepresentation(Hierarchy hierarchy, Canvas canvas, RootPanel canvasHolder) {
+    public HierarchyRepresentation(Hierarchy hierarchy, Canvas canvas, RootPanel canvasHolder) {
         this(hierarchy);
         this.canvas = canvas;
         this.canvasHolder = canvasHolder;
@@ -209,21 +204,6 @@ public class HierarchyRepresentation {
     }
 
     /**
-     *
-     * The method draws the hierarchy in the specified canvas
-     * and div, wrapped the canvas.
-     *
-     * @param canvasHolder - div, wrapped the canvas.
-     * @param canvas
-     * @param hierarchy
-     */
-    public static void drawHierarchy(RootPanel canvasHolder, Canvas canvas, Hierarchy hierarchy) {
-        HierarchyRepresentation hierarchyRepresentation =
-                new HierarchyRepresentation(hierarchy, canvas, canvasHolder);
-        hierarchyRepresentation.drawHierarchy();
-    }
-
-    /**
      * The method sets instance variables to clear values.
      */
     private void initVariables() {
@@ -238,14 +218,13 @@ public class HierarchyRepresentation {
         }
     }
 
-    private void drawHierarchy() {
+    public void drawHierarchy() {
         initVariables();
         Hierarchy originHierarchy = hierarchy.clone();
         splitHierarchyByLevels(hierarchy.getNodes().keySet(), 0);
         splitNodesByIndex();
         drawNodesMap();
-        Collection<Integer> c = HierarchyPathFinder.createListFromHierarchy(originHierarchy);
-        printList(c);
+        printList(HierarchyPathFinder.createListFromHierarchy(originHierarchy));
     }
 
     private void printList(Collection<Integer> list) {
@@ -262,7 +241,7 @@ public class HierarchyRepresentation {
             ++i;
         }
         RootPanel.get(NODES_LIST_ID).clear();
-        if (list != null && !list.isEmpty()) {
+        if (!list.isEmpty()) {
             RootPanel.get(NODES_LIST_ID).add(new InlineLabel(listText.toString()));
             RootPanel.get(NODES_LIST_TITLE_ID).getElement().setInnerHTML(NODES_LIST_TITLE_DEFAULT);
         }
@@ -291,16 +270,8 @@ public class HierarchyRepresentation {
             Collection<Node> nodes = nodesMap.get(level);
             for (Node node:nodes) {
                 int index = node.getIndexHolder().getValue();
-                Map<Integer, Collection<Node>> indexMap = nodesByIndexMap.get(index);
-                if (indexMap == null) {
-                    indexMap = new HashMap<Integer, Collection<Node>>();
-                    nodesByIndexMap.put(index, indexMap);
-                }
-                Collection<Node> levelNodes = indexMap.get(level);
-                if (levelNodes == null) {
-                    levelNodes = new HashSet<Node>();
-                    indexMap.put(level, levelNodes);
-                }
+                Map<Integer, Collection<Node>> indexMap = nodesByIndexMap.computeIfAbsent(index, k -> new HashMap<>());
+                Collection<Node> levelNodes = indexMap.computeIfAbsent(level, k -> new HashSet<>());
                 levelNodes.add(node);
             }
         }
@@ -363,7 +334,7 @@ public class HierarchyRepresentation {
      * @param context2d
      * @param hierarchy
      */
-    private static void drawLinks(Map<Integer, CircleWidget> circlesMap, Node node,
+    private void drawLinks(Map<Integer, CircleWidget> circlesMap, Node node,
                                   Context2d context2d, Hierarchy hierarchy) {
         if (node.getParentIds() != null && node.getParentIds().size() > 0) {
             for (Integer pid:node.getParentIds()) {
@@ -413,8 +384,7 @@ public class HierarchyRepresentation {
             canvas.setWidth(width + "px");
             canvas.setCoordinateSpaceWidth(width);
             for (int level:nodesByIndexMap.get(index).keySet()) {
-                Collection<Node> list = nodesByIndexMap.get(index).get(level);
-                createCircles(list, maxLeveSize, level, circlesMap, offsetSize);
+                createCircles(nodesByIndexMap.get(index).get(level), maxLeveSize, level, circlesMap, offsetSize);
             }
         }
         canvas.getContext2d().clearRect(0, 0,
@@ -431,7 +401,7 @@ public class HierarchyRepresentation {
      * @param circlesMap
      * @param canvasHolder
      */
-    private static void drawCircles(Map<Integer, CircleWidget> circlesMap, RootPanel canvasHolder) {
+    private void drawCircles(Map<Integer, CircleWidget> circlesMap, RootPanel canvasHolder) {
         Iterator<Widget> iterator = canvasHolder.iterator();
         while (iterator.hasNext()) {
             Widget widget = iterator.next();
@@ -477,7 +447,7 @@ public class HierarchyRepresentation {
             indexHolder.reSetValue(currentIndex);
         }
         Collection<Node> nodesSet = nodesMap.get(levelHolder.getLevel());
-        if (nodesSet == null) nodesSet = new HashSet<Node>();
+        if (nodesSet == null) nodesSet = new HashSet<>();
         nodesSet.add(node);
         node.setLevel(levelHolder.getLevel());
         nodesMap.put(levelHolder.getLevel(), nodesSet);
@@ -516,22 +486,22 @@ public class HierarchyRepresentation {
      * The method recursively marks and sets levels to nodes.
      *
      * @param nodeIds
-     * @param deep
+     * @param depth
      * @return
      */
-    private int findLevel(Collection<Integer> nodeIds, int deep) {
+    private int findLevel(Collection<Integer> nodeIds, int depth) {
         int level = 0;
         currentIndex = null;
         for (Integer nodeId:nodeIds) {
             Node node = hierarchy.getNodes().get(nodeId);
-            if (deep == 0) {
+            if (depth == 0) {
                 currentIndex = null;
             }
             if (node.getLevel() == null) {
-                level = findNewLevel(node, deep, level);
+                level = findNewLevel(node, depth, level);
             }
             else {
-                level = findInheritedLevel(node, deep, level);
+                level = findInheritedLevel(node, depth, level);
             }
         }
         return level;
@@ -544,14 +514,12 @@ public class HierarchyRepresentation {
      * @param deep - deep of recursion.
      */
     public void splitHierarchyByLevels(Collection<Integer> nodes, int deep) {
-        if (nodes!=null && nodes.size() > 0) {
-            int level = findLevel(nodes, deep);
-            levelHolder.setLevel(level + 1);
+        if (nodes != null && nodes.size() > 0) {
+            levelHolder.setLevel(findLevel(nodes, deep) + 1);
         }
         else {
             levelHolder.setLevel(0);
             int newVal = ++indexCounter;
-            //Window.alert("new indexHolder " + newVal);
             indexHolder = IndexHolder.getInstance(newVal);
         }
     }

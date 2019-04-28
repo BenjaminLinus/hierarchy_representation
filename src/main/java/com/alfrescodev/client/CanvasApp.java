@@ -56,7 +56,7 @@ public class CanvasApp implements EntryPoint {
         canvas.setCoordinateSpaceHeight(height);
         RootPanel canvasHolder = RootPanel.get(CANVAS_HOLDER_ID);
         hierarchy = Hierarchy.generateRandomHierarchy(HIERARHY_DEFAULT_MAX_COUNT);
-        HierarchyRepresentation.drawHierarchy(canvasHolder, canvas, hierarchy);
+        new HierarchyRepresentation(hierarchy, canvas, canvasHolder).drawHierarchy();
         addButtons();
     }
 
@@ -65,11 +65,7 @@ public class CanvasApp implements EntryPoint {
         button.addStyleName(BUTTON_STYLE_NAME);
         button.setWidth(BUTTON_WIDTH + "px");
         button.getElement().getStyle().setMarginRight(BUTTON_MARGIN_X, Style.Unit.PX);
-        button.addClickHandler(new ClickHandler() {
-            public void onClick(ClickEvent event) {
-                addNewNode();
-            }
-        });
+        button.addClickHandler(event -> addNewNode());
         return button;
     }
 
@@ -83,11 +79,9 @@ public class CanvasApp implements EntryPoint {
         button.addStyleName(BUTTON_STYLE_NAME);
         button.setWidth(BUTTON_WIDTH + "px");
         button.getElement().getStyle().setMarginLeft(BUTTON_MARGIN_X, Style.Unit.PX);
-        button.addClickHandler(new ClickHandler() {
-            public void onClick(ClickEvent event) {
-                if (Window.confirm(CLEAR_CONFIRM_MESSAGE)) {
-                    clearWorkspace();
-                }
+        button.addClickHandler(event -> {
+            if (Window.confirm(CLEAR_CONFIRM_MESSAGE)) {
+                clearWorkspace();
             }
         });
         return button;
