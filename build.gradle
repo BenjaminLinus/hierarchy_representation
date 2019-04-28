@@ -1,0 +1,71 @@
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath 'org.wisepersist:gwt-gradle-plugin:1.0.6'
+        classpath 'com.bmuschko:gradle-tomcat-plugin:2.5'
+    }
+}
+
+plugins {
+    id 'java'
+    id 'maven-publish'
+}
+
+repositories {
+    mavenLocal()
+    maven {
+        url = 'http://repo.maven.apache.org/maven2'
+    }
+}
+
+apply plugin: 'war'
+apply plugin: 'gwt'
+apply plugin: 'com.bmuschko.tomcat'
+
+dependencies {
+    runtime 'com.google.gwt:gwt-servlet:2.8.2'
+    testCompile 'junit:junit:4.7'
+    testCompile 'javax.validation:validation-api:1.0.0.GA'
+    compile 'com.google.gwt:gwt-user:2.8.2'
+    def tomcatVersion = '9.0.1'
+    tomcat "org.apache.tomcat.embed:tomcat-embed-core:${tomcatVersion}",
+            "org.apache.tomcat.embed:tomcat-embed-logging-juli:9.0.0.M6",
+            "org.apache.tomcat.embed:tomcat-embed-jasper:${tomcatVersion}"
+}
+
+tomcat {
+    httpProtocol = 'org.apache.coyote.http11.Http11Nio2Protocol'
+    ajpProtocol  = 'org.apache.coyote.ajp.AjpNio2Protocol'
+}
+
+group = 'com.alfrescodev'
+version = '1.0-SNAPSHOT'
+description = 'GWT Maven Archetype'
+sourceCompatibility = '1.8'
+
+publishing {
+    publications {
+        maven(MavenPublication) {
+            from(components.java)
+        }
+    }
+}
+
+tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8'
+}
+
+
+gwt {
+    gwtVersion='2.8.2'
+    modules 'com.alfrescodev.App'
+    minHeapSize = "512M";
+    maxHeapSize = "1024M";
+}
+
+compileGwt {
+    minHeapSize = "512M";
+    maxHeapSize = "1024M";
+}
