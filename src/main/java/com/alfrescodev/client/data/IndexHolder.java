@@ -8,8 +8,6 @@ import java.util.List;
 /**
  * Class for mutable indexing nodes.
  *
- * @author Alfrescodev.com
- *
  */
 public class IndexHolder {
 

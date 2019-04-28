@@ -3,8 +3,6 @@ package com.alfrescodev.client.widget;
 import com.alfrescodev.client.action.OkCancelAction;
 import com.alfrescodev.client.data.Node;
 import com.alfrescodev.client.figure.HierarchyRepresentation;
-import com.google.gwt.cell.client.ActionCell;
-import com.google.gwt.cell.client.Cell;
 import com.google.gwt.cell.client.ClickableTextCell;
 import com.google.gwt.cell.client.ValueUpdater;
 import com.google.gwt.dom.client.Element;
@@ -14,11 +12,8 @@ import com.google.gwt.dom.client.Style;
 import com.google.gwt.safehtml.shared.SafeHtml;
 import com.google.gwt.safehtml.shared.SafeHtmlBuilder;
 import com.google.gwt.user.cellview.client.Column;
-import com.google.gwt.user.cellview.client.TextColumn;
-import com.google.gwt.user.client.Window;
 
 import java.util.Collection;
-import java.util.List;
 import java.util.Set;
 
 import static com.google.gwt.dom.client.BrowserEvents.CLICK;
@@ -27,8 +22,6 @@ import static com.google.gwt.dom.client.BrowserEvents.CLICK;
  *
  * Widget for context menu, opens when "delete links" clicked.
  * The class is a singletone.
- *
- * @author Alfrescodev.com
  *
  */
 public class DeleteLinksMenu extends LinksManageMenu {
@@ -86,7 +79,7 @@ public class DeleteLinksMenu extends LinksManageMenu {
         }
         super.okClick();
         if (r) {
-            HierarchyRepresentation.redrawPlease();
+            HierarchyRepresentation.redraw();
         }
     }
 

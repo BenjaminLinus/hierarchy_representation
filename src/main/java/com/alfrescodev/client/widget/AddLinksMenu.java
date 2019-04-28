@@ -5,26 +5,15 @@ import com.alfrescodev.client.data.Node;
 import com.alfrescodev.client.figure.HierarchyRepresentation;
 import com.google.gwt.cell.client.CheckboxCell;
 import com.google.gwt.cell.client.FieldUpdater;
-import com.google.gwt.dom.client.Style;
-import com.google.gwt.event.dom.client.*;
-import com.google.gwt.event.shared.HandlerRegistration;
-import com.google.gwt.user.cellview.client.CellTable;
 import com.google.gwt.user.cellview.client.Column;
-import com.google.gwt.user.cellview.client.TextColumn;
-import com.google.gwt.user.client.Window;
-import com.google.gwt.user.client.ui.*;
-import com.google.gwt.view.client.ListDataProvider;
 
 import java.util.HashSet;
-import java.util.List;
 import java.util.Set;
 
 /**
  *
  * Widget for context menu, opens when "add links" clicked.
  * The class is a singletone.
- *
- * @author Alfrescodev.com
  *
  */
 public class AddLinksMenu extends LinksManageMenu {
@@ -73,7 +62,7 @@ public class AddLinksMenu extends LinksManageMenu {
         }
         super.okClick();
         if (r) {
-            HierarchyRepresentation.redrawPlease();
+            HierarchyRepresentation.redraw();
         }
     }
 

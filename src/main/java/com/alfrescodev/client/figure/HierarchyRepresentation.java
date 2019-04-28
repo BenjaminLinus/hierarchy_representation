@@ -10,9 +10,7 @@ import com.alfrescodev.client.widget.NodeHighlightContextMenu;
 import com.google.gwt.canvas.client.Canvas;
 import com.google.gwt.canvas.dom.client.Context2d;
 import com.google.gwt.canvas.dom.client.CssColor;
-import com.google.gwt.dom.client.Touch;
 import com.google.gwt.event.dom.client.*;
-import com.google.gwt.user.client.Window;
 import com.google.gwt.user.client.ui.InlineLabel;
 import com.google.gwt.user.client.ui.RootPanel;
 import com.google.gwt.user.client.ui.Widget;
@@ -23,7 +21,6 @@ import java.util.*;
  *
  * The class draws the hierarchy object.
  *
- * @author Alfrescodev.com
  *
  */
 public class HierarchyRepresentation {
@@ -186,7 +183,7 @@ public class HierarchyRepresentation {
      */
     private void createRedrawHandler() {
         redrawHandler = new RedrawHandler() {
-            public void redrawPlease() {
+            public void redraw() {
                 drawHierarchy();
             }
         };
@@ -195,9 +192,9 @@ public class HierarchyRepresentation {
     /**
      * the method executes redraw request.
      */
-    public static void redrawPlease() {
+    public static void redraw() {
         if (redrawHandler != null) {
-            redrawHandler.redrawPlease();
+            redrawHandler.redraw();
         }
     }
 

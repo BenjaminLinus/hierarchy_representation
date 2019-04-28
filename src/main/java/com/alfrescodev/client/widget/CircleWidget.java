@@ -15,8 +15,6 @@ import com.google.gwt.user.client.ui.FlowPanel;
 /**
  * This widget represents a circle.
  *
- * @author Alfrescodev.com
- *
  */
 public class CircleWidget extends Composite {
 

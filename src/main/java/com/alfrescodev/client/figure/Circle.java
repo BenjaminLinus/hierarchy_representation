@@ -7,8 +7,6 @@ import com.google.gwt.canvas.dom.client.CssColor;
  *
  * This figure represents circle on canvas.
  *
- * @author Alfrescodev.com
- *
  */
 public class Circle {
 

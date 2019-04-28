@@ -19,7 +19,6 @@ import java.util.Set;
  *
  * The base class for links manage menu (add links menu and delete links menu).
  *
- * @author Alfrescodev.com
  */
 public abstract class LinksManageMenu extends FlowPanel implements HasMouseWheelHandlers {
 
@@ -146,7 +145,6 @@ public abstract class LinksManageMenu extends FlowPanel implements HasMouseWheel
         table.getElement().getStyle().setFontWeight(Style.FontWeight.NORMAL);
         table.getElement().getStyle().setPaddingLeft(TABLE_PERCENT_PADDING_X, Style.Unit.PCT);
         table.getElement().getStyle().setPaddingRight(TABLE_PERCENT_PADDING_X, Style.Unit.PCT);
-        //table.getElement().getStyle().setTextAlign(Style.TextAlign.CENTER);
         ListDataProvider<Node> dataProvider = new ListDataProvider<Node>();
         dataProviderList = dataProvider.getList();
         dataProvider.addDataDisplay(table);
@@ -208,7 +206,6 @@ public abstract class LinksManageMenu extends FlowPanel implements HasMouseWheel
     private void createOkButton() {
         okButton = new OkCancelButton("Ok");
         okButton.addStyleName(BUTTON_STYLE_NAME);
-        //okButton.setEnabled(false);
         okButton.setWidth(BUTTON_WIDTH + "px");
         okButton.getElement().getStyle().setMarginRight(BUTTON_MARGIN_X, Style.Unit.PX);
         okButton.addClickHandler(new ClickHandler() {
@@ -232,12 +229,7 @@ public abstract class LinksManageMenu extends FlowPanel implements HasMouseWheel
 
     private Panel createControlButtons() {
         FlowPanel panel = new FlowPanel();
-        //panel.getElement().getStyle().setVerticalAlign(Style.VerticalAlign.BOTTOM);
-        //panel.getElement().getStyle().setPosition(Style.Position.ABSOLUTE);
-        //panel.getElement().getStyle().setBottom(BUTTON_MARGIN_Y, Style.Unit.PX);
         panel.setHeight(BUTTONS_HEIGHT + 1 + "px");
-        //panel.getElement().getStyle().setLeft(0, Style.Unit.PX);
-        //panel.getElement().getStyle().setRight(0, Style.Unit.PX);
         panel.getElement().getStyle().setLineHeight(BUTTONS_HEIGHT, Style.Unit.PX);
         panel.getElement().getStyle().setTextAlign(Style.TextAlign.CENTER);
         panel.getElement().getStyle().setPaddingLeft(BUTTONS_PADDING_X, Style.Unit.PX);
@@ -245,7 +237,6 @@ public abstract class LinksManageMenu extends FlowPanel implements HasMouseWheel
         panel.getElement().getStyle().setPaddingBottom(BUTTON_MARGIN_Y, Style.Unit.PX);
 
         HorizontalPanel buttons = new HorizontalPanel();
-        //buttons.getElement().getStyle().setVerticalAlign(Style.VerticalAlign.BOTTOM);
         buttons.setHeight(BUTTONS_HEIGHT + "px");
         buttons.getElement().getStyle().setLineHeight(BUTTONS_HEIGHT, Style.Unit.PX);
         createOkButton();

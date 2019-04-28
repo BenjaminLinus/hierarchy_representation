@@ -17,8 +17,6 @@ import java.util.*;
  * Widget for context menu, opens when a widget highlights.
  * The class is a singletone.
  *
- * @author Alfrescodev.com
- *
  */
 public class NodeHighlightContextMenu extends PopupPanel {
 
@@ -242,7 +240,7 @@ public class NodeHighlightContextMenu extends PopupPanel {
     private void deleteNodeClick() {
         if (Window.confirm(DELETE_CONFIRM_MESSAGE)) {
             deleteNode(circleWidget.getNode());
-            HierarchyRepresentation.redrawPlease();
+            HierarchyRepresentation.redraw();
         }
     }
 

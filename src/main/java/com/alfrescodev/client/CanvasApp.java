@@ -18,7 +18,6 @@ import com.google.gwt.user.client.ui.*;
  * If client's browser does not supports the canvas feature
  * the error message will be displayed.
  *
- * @author alfrescodev.com
  */
 public class CanvasApp implements EntryPoint {
 
@@ -56,8 +55,6 @@ public class CanvasApp implements EntryPoint {
         canvas.setCoordinateSpaceWidth(width);
         canvas.setCoordinateSpaceHeight(height);
         RootPanel canvasHolder = RootPanel.get(CANVAS_HOLDER_ID);
-        //hierarchy = Hierarchy.newTestSmallHierarchy4();
-        //hierarchy = Hierarchy.newTestHierarchy();
         hierarchy = Hierarchy.generateRandomHierarchy(HIERARHY_DEFAULT_MAX_COUNT);
         HierarchyRepresentation.drawHierarchy(canvasHolder, canvas, hierarchy);
         addButtons();
@@ -78,7 +75,7 @@ public class CanvasApp implements EntryPoint {
 
     private void addNewNode() {
         hierarchy.addNewNode();
-        HierarchyRepresentation.redrawPlease();
+        HierarchyRepresentation.redraw();
     }
 
     private Button createClearButton() {
@@ -98,7 +95,7 @@ public class CanvasApp implements EntryPoint {
 
     private void clearWorkspace() {
         hierarchy.getNodes().clear();
-        HierarchyRepresentation.redrawPlease();
+        HierarchyRepresentation.redraw();
     }
 
     /**

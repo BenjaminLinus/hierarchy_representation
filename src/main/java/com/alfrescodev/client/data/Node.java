@@ -7,8 +7,6 @@ import java.util.Set;
 /**
  * The class represents node in hierarchy;
  *
- * @author Alfrescodev.com
- *
  */
 public class Node implements Comparable<Node> {
 

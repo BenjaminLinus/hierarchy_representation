@@ -5,8 +5,6 @@ import java.util.*;
 /**
  * The class represents hierarchy of dependencies;
  *
- * @author Alfrescodev.com
- *
  */
 public class Hierarchy implements Cloneable {
 
@@ -17,7 +15,7 @@ public class Hierarchy implements Cloneable {
 
     private static Set<Integer> newRandomParentsList(int id) {
         int parentsCount = (int) ( Math.random() * id );
-        Set<Integer> parentIds = new HashSet<Integer>();
+        Set<Integer> parentIds = new HashSet<>();
         for (int j=0; j < parentsCount; ++j) {
             int parentId = (int) ( Math.random() * id );
             parentIds.add(parentId);
@@ -34,12 +32,10 @@ public class Hierarchy implements Cloneable {
      */
     public static Hierarchy generateRandomHierarchy(int maxNodesCount) {
         Hierarchy hierarchy = new Hierarchy();
-        hierarchy.nodes = new HashMap<Integer, Node>();
+        hierarchy.nodes = new HashMap<>();
         int count = (int) (Math.random()*maxNodesCount) + 3;
         for (int id = 0; id < count; ++id) {
             Set<Integer> parentIds = newRandomParentsList(id);
-            //Window.alert("id = " + id);
-            //Window.alert("parentIds = " + parentIds);
             Node node = new Node(id, parentIds);
             hierarchy.nodes.put(id, node);
         }
@@ -49,24 +45,22 @@ public class Hierarchy implements Cloneable {
     /**
      * The method creates new node id hierarchy.
      *
-     * @param hierarchy
      * @param id - id of the new node.
      */
-    public static void newNode(Hierarchy hierarchy, int id) {
+    public void newNode(int id) {
         Node node = new Node(id, null);
-        hierarchy.nodes.put(node.getId(), node);
+        this.nodes.put(node.getId(), node);
     }
 
     /**
      * The method creates new node id hierarchy.
      *
-     * @param hierarchy
      * @param id - id of the new node.
      * @param parentIds - parent ids of the new node.
      */
-    public static void newNode(Hierarchy hierarchy, int id, Integer... parentIds) {
-        Node node = new Node(id, new HashSet<Integer>(Arrays.asList(parentIds)));
-        hierarchy.nodes.put(node.getId(), node);
+    public void newNode(int id, Integer... parentIds) {
+        Node node = new Node(id, new HashSet<>(Arrays.asList(parentIds)));
+        this.nodes.put(node.getId(), node);
     }
 
     /**
@@ -77,7 +71,7 @@ public class Hierarchy implements Cloneable {
      */
     public static Hierarchy clearHierarchy() {
         Hierarchy hierarchy = new Hierarchy();
-        hierarchy.nodes = new HashMap<Integer, Node>();
+        hierarchy.nodes = new HashMap<>();
         return hierarchy;
     }
 
@@ -89,31 +83,27 @@ public class Hierarchy implements Cloneable {
      */
     public static Hierarchy newTestHierarchy3() {
         Hierarchy hierarchy = Hierarchy.clearHierarchy();
-
-        Hierarchy.newNode(hierarchy, 0);
-        Hierarchy.newNode(hierarchy, 1, 0);
-        Hierarchy.newNode(hierarchy, 2, 0, 1);
-        Hierarchy.newNode(hierarchy, 3);
-        Hierarchy.newNode(hierarchy, 4, 0, 3);
-        Hierarchy.newNode(hierarchy, 5, 0);
-        Hierarchy.newNode(hierarchy, 6, 3);
-
-        Hierarchy.newNode(hierarchy, 11);
-        Hierarchy.newNode(hierarchy, 12, 3, 0);
-        Hierarchy.newNode(hierarchy, 13, 11);
-        Hierarchy.newNode(hierarchy, 17);
-        Hierarchy.newNode(hierarchy, 13, 11, 17);
-
-        Hierarchy.newNode(hierarchy, 7);
-        Hierarchy.newNode(hierarchy, 8, 7);
-        Hierarchy.newNode(hierarchy, 14, 7);
-        Hierarchy.newNode(hierarchy, 15, 14, 7);
-        Hierarchy.newNode(hierarchy, 16, 14);
-        Hierarchy.newNode(hierarchy, 22, 15);
-        Hierarchy.newNode(hierarchy, 23, 22);
-        Hierarchy.newNode(hierarchy, 24, 23);
-        Hierarchy.newNode(hierarchy, 25, 24);
-
+        hierarchy.newNode(0);
+        hierarchy.newNode(1, 0);
+        hierarchy.newNode(2, 0, 1);
+        hierarchy.newNode(3);
+        hierarchy.newNode(4, 0, 3);
+        hierarchy.newNode(5, 0);
+        hierarchy.newNode(6, 3);
+        hierarchy.newNode(11);
+        hierarchy.newNode(12, 3, 0);
+        hierarchy.newNode(13, 11);
+        hierarchy.newNode(17);
+        hierarchy.newNode(13, 11, 17);
+        hierarchy.newNode(7);
+        hierarchy.newNode(8, 7);
+        hierarchy.newNode(14, 7);
+        hierarchy.newNode(15, 14, 7);
+        hierarchy.newNode(16, 14);
+        hierarchy.newNode(22, 15);
+        hierarchy.newNode(23, 22);
+        hierarchy.newNode(24, 23);
+        hierarchy.newNode( 25, 24);
         return hierarchy;
     }
 
@@ -125,13 +115,11 @@ public class Hierarchy implements Cloneable {
      */
     public static Hierarchy newTestSmallHierarchy4() {
         Hierarchy hierarchy = Hierarchy.clearHierarchy();
-
-        Hierarchy.newNode(hierarchy, 0);
-        Hierarchy.newNode(hierarchy, 1, 0);
-        Hierarchy.newNode(hierarchy, 2, 0, 1);
-        Hierarchy.newNode(hierarchy, 3);
-        Hierarchy.newNode(hierarchy, 4, 0, 3);
-
+        hierarchy.newNode(0);
+        hierarchy.newNode(1, 0);
+        hierarchy.newNode(2, 0, 1);
+        hierarchy.newNode(3);
+        hierarchy.newNode(4, 0, 3);
         return hierarchy;
     }
 
@@ -143,21 +131,20 @@ public class Hierarchy implements Cloneable {
      */
     public static Hierarchy newTestHierarchy2() {
         Hierarchy hierarchy = clearHierarchy();
-        newNode(hierarchy, 0);
-        newNode(hierarchy, 1);
-        newNode(hierarchy, 2, 0);
-        newNode(hierarchy, 3, 0, 1);
-        newNode(hierarchy, 4, 1);
-        newNode(hierarchy, 5, 1, 3);
-        newNode(hierarchy, 6, 5, 3);
-        newNode(hierarchy, 7, 2, 1);
-        newNode(hierarchy, 10, 2, 1);
-        newNode(hierarchy, 13);
-        newNode(hierarchy, 15, 13, 10);
-        newNode(hierarchy, 16);
-        newNode(hierarchy, 13, 16);
-
-        newNode(hierarchy, 9);
+        hierarchy.newNode(0);
+        hierarchy.newNode(1);
+        hierarchy.newNode(2, 0);
+        hierarchy.newNode(3, 0, 1);
+        hierarchy.newNode(4, 1);
+        hierarchy.newNode(5, 1, 3);
+        hierarchy.newNode(6, 5, 3);
+        hierarchy.newNode(7, 2, 1);
+        hierarchy.newNode(10, 2, 1);
+        hierarchy.newNode(13);
+        hierarchy.newNode(15, 13, 10);
+        hierarchy.newNode(16);
+        hierarchy.newNode(13, 16);
+        hierarchy.newNode(9);
         return hierarchy;
     }
 
@@ -169,39 +156,27 @@ public class Hierarchy implements Cloneable {
      */
     public static Hierarchy newTestHierarchy() {
         Hierarchy hierarchy = clearHierarchy();
-
-        newNode(hierarchy, 0);
-        newNode(hierarchy, 1, 0);
-        newNode(hierarchy, 2, 0, 1);
-        newNode(hierarchy, 3);
-        newNode(hierarchy, 4, 0 ,3);
-        newNode(hierarchy, 5, 0);
-        newNode(hierarchy, 6, 3);
-        newNode(hierarchy, 11, 6);
-        newNode(hierarchy, 12, 3, 0);
-        newNode(hierarchy, 13, 11, 6);
-        newNode(hierarchy, 17);
-        newNode(hierarchy, 13, 11, 6, 17);
-
-        newNode(hierarchy, 7);
-        newNode(hierarchy, 8, 7);
-        //newNode(hierarchy, 9, 7);
-        //newNode(hierarchy, 10, 9);
-        newNode(hierarchy, 14, 7);
-        newNode(hierarchy, 15, 14, 7);
-        newNode(hierarchy, 16, 14);
-        newNode(hierarchy, 22, 15);
-        newNode(hierarchy, 23, 22);
-        newNode(hierarchy, 24, 23);
-        newNode(hierarchy, 25, 24);
-
-        /*
-        newNode(hierarchy, 18);
-        newNode(hierarchy, 19, 18);
-        newNode(hierarchy, 21, 18);
-        newNode(hierarchy, 20, 18, 19);
-        */
-
+        hierarchy.newNode(0);
+        hierarchy.newNode(1, 0);
+        hierarchy.newNode(2, 0, 1);
+        hierarchy.newNode(3);
+        hierarchy.newNode(4, 0 ,3);
+        hierarchy.newNode(5, 0);
+        hierarchy.newNode(6, 3);
+        hierarchy.newNode(11, 6);
+        hierarchy.newNode( 12, 3, 0);
+        hierarchy.newNode(13, 11, 6);
+        hierarchy.newNode(17);
+        hierarchy.newNode(13, 11, 6, 17);
+        hierarchy.newNode(7);
+        hierarchy.newNode(8, 7);
+        hierarchy.newNode(14, 7);
+        hierarchy.newNode(15, 14, 7);
+        hierarchy.newNode(16, 14);
+        hierarchy.newNode(22, 15);
+        hierarchy.newNode(23, 22);
+        hierarchy.newNode(24, 23);
+        hierarchy.newNode(25, 24);
         return hierarchy;
     }
 
@@ -221,7 +196,7 @@ public class Hierarchy implements Cloneable {
      */
     public Hierarchy clone() {
         Hierarchy cloned = new Hierarchy();
-        cloned.nodes = new HashMap<Integer, Node>();
+        cloned.nodes = new HashMap<>();
         for (int id:this.nodes.keySet()) {
             Node node = new Node(id, this.nodes.get(id).getParentIds());
             cloned.nodes.put(id, node);

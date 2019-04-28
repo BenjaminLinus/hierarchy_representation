@@ -5,8 +5,6 @@ import java.util.*;
 /**
  * The class for searching path in hierarchy.
  *
- * @author Alfrescodev.com
- *
  */
 public class HierarchyPathFinder {
 
