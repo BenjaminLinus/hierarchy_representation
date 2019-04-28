@@ -1,6 +1,0 @@
--------------------------------------------------------------------------------
-Test set: junit.framework.TestSuite@15e6e48b
--------------------------------------------------------------------------------
-Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 25.495 sec
-testHierarchy1(com.alfrescodev.client.GwtTestApp)  Time elapsed: 25.466 sec
-testHierarchy2(com.alfrescodev.client.GwtTestApp)  Time elapsed: 0.019 sec
