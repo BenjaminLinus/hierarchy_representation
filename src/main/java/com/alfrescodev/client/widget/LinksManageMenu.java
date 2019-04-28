@@ -35,11 +35,11 @@ public abstract class LinksManageMenu extends FlowPanel implements HasMouseWheel
     private static final int BUTTON_MARGIN_Y = 4;
     private static final int BUTTONS_PADDING_X = 7;
     private static final int BUTTON_WIDTH = 70;
-    protected static final byte LINE_HEIGHT = 12;
-    protected static final byte MIDDLE_PANEL_HEIGHT = 90;
-    protected static final byte TABLE_PERCENT_PADDING_X = 16;
+    private static final byte LINE_HEIGHT = 12;
+    private static final byte MIDDLE_PANEL_HEIGHT = 90;
+    private static final byte TABLE_PERCENT_PADDING_X = 16;
     private static final String BUTTON_STYLE_NAME = "action-button";
-    protected static final String TABLE_STYLE_NAME = "nodes-table";
+    private static final String TABLE_STYLE_NAME = "nodes-table";
     private static final int SCROLL_K = 5;
     private static final String NO_ITEMS_MESSAGE = "No items";
 
